@@ -48,6 +48,7 @@ defmodule Crux.Interaction.MessageTest do
           end
         )
       end
+
       assert_raise Exceptions.InvalidName, ~r/must be \[1,32\]/, fn ->
         Code.eval_quoted(
           quote do

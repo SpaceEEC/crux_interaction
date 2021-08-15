@@ -536,23 +536,28 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
         end
       )
 
-    assert %{name: "test", description: "module", type: 1, options: [
-      %{
-        type: 10,
-        name: "foo",
-        description: "foo"
-      },
-      %{
-        type: 9,
-        name: "bar",
-        description: "bar"
-      },
-      %{
-        type: 5,
-        name: "baz",
-        description: "baz"
-      }
-    ]} === mod.__crux_command__()
+    assert %{
+             name: "test",
+             description: "module",
+             type: 1,
+             options: [
+               %{
+                 type: 10,
+                 name: "foo",
+                 description: "foo"
+               },
+               %{
+                 type: 9,
+                 name: "bar",
+                 description: "bar"
+               },
+               %{
+                 type: 5,
+                 name: "baz",
+                 description: "baz"
+               }
+             ]
+           } === mod.__crux_command__()
   end
 
   describe "non-english command names work" do
