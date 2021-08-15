@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.25.1">
+    <meta name="project" content="crux_interaction v0.1.0-dev">
+    <title>API Reference — crux_interaction v0.1.0-dev</title>
+    <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
+    <script src="dist/sidebar_items-cc0067f2b1.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/app-f27ff079945e43879c46.js"></script>
+  </head>
+  <body data-type="extras">
+    <script>
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName">
+crux_interaction      </a>
+      <strong class="sidebar-projectVersion">
+        v0.1.0-dev
+      </strong>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  API Reference <small class="app-vsn">crux_interaction v0.1.0-dev</small>
+</h1>
+
+  <section class="details-list">
+    <h2 id="modules" class="section-heading">
+  <a href="#modules" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Modules
+</h2>
+
+    <div class="summary">
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.html">Crux.Interaction.ApplicationCommand</a>
+  </div>
+    <div class="summary-synopsis"><p>Behavior providing <a href="#c:__crux_command__/0"><code class="inline">__crux_command__/0</code></a> to access underlying command data.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.ChatInput.html">Crux.Interaction.ApplicationCommand.ChatInput</a>
+  </div>
+    <div class="summary-synopsis"><p>Provides a DSL to define chat input application commands A.K.A. slash commands.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidChoice.html">Crux.Interaction.ApplicationCommand.Exceptions.InvalidChoice</a>
+  </div>
+    <div class="summary-synopsis"><p>Raised when an invalid application command chat input choice name or description was specified.<br/>Also raised when too many or duplicated choices were specified.<br/>See <code class="inline">valid_name?/1</code> and <code class="inline">valid_choice?/2</code></p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidDefaultPermission.html">Crux.Interaction.ApplicationCommand.Exceptions.InvalidDefaultPermission</a>
+  </div>
+    <div class="summary-synopsis"><p>Raised when an invalid <code class="inline">@default_permission</code> was specified for an application command chat input.<br/>I.e. not a boolean.<br/>See: <a href="#valid?/1"><code class="inline">valid?/1</code></a></p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidDescription.html">Crux.Interaction.ApplicationCommand.Exceptions.InvalidDescription</a>
+  </div>
+    <div class="summary-synopsis"><p>Raised when an invalid description was specified anywhere.<br/>See: <a href="#valid?/1"><code class="inline">valid?/1</code></a></p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidName.html">Crux.Interaction.ApplicationCommand.Exceptions.InvalidName</a>
+  </div>
+    <div class="summary-synopsis"><p>Raised when an invalid name was specified anywhere.<br/>See: <code class="inline">valid?/1</code></p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidState.html">Crux.Interaction.ApplicationCommand.Exceptions.InvalidState</a>
+  </div>
+    <div class="summary-synopsis"><p>Raised when an option is specified where it's not valid.<br/>E.g. when a <code class="inline">subcommand/4</code> is specified after a <code class="inline">string/2,3</code> or a <code class="inline">choice/2</code> in a <code class="inline">subcommand/4</code>'s do block.<br/>Also raised when an invalid option modifier was specified.<br/>E.g. when <code class="inline">@required</code> is used where it's not allowed.<br/>Also raised when too many or duplicated options were specified.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.Message.html">Crux.Interaction.ApplicationCommand.Message</a>
+  </div>
+    <div class="summary-synopsis"><p>Provides a DSL to define message application commands A.K.A. context menus.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.ApplicationCommand.User.html">Crux.Interaction.ApplicationCommand.User</a>
+  </div>
+    <div class="summary-synopsis"><p>Provides a DSL to define user application commands A.K.A. context menus.</p></div>
+</div>
+    </div>
+  </section>
+
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+  </div>
+  <div class="bottom-actions-item">
+  </div>
+</div>
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.25.1) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>
