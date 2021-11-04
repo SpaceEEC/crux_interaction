@@ -8,6 +8,7 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
   @compile {:no_warn_undefined, MyBot.Ping}
   @compile {:no_warn_undefined, MyBot.Greet}
   @compile {:no_warn_undefined, MyBot.Info}
+  @compile {:no_warn_undefined, MyBot.Tag}
 
   describe "the moduledoc examples work" do
     test "ping" do
@@ -106,6 +107,27 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
                        description: "The role you want to show basic info about"
                      }
                    ]
+                 }
+               ],
+               type: 1
+             } === data
+    end
+
+    test "tag" do
+      Code.compile_file("test/interaction/application_command/chat_input/tag.ex")
+
+      data = MyBot.Tag.__crux_command__()
+
+      assert %{
+               name: "tag",
+               description: "Shows a tag.",
+               options: [
+                 %{
+                   type: 3,
+                   name: "name",
+                   description: "The name of the tag",
+                   autocomplete: true,
+                   required: true
                  }
                ],
                type: 1
@@ -474,6 +496,47 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
           end
         )
       end
+    end
+
+    # as well as the others
+    test "can't autocomplete user type" do
+      assert_raise Exceptions.InvalidState, "@autocomplete is only valid for options.", fn ->
+        Code.eval_quoted(
+          quote do
+            defmodule CompleteForUser do
+              use ChatInput
+
+              @name "name"
+              @description "description"
+
+              @autocomplete true
+              user("foo", "bar")
+            end
+          end
+        )
+      end
+    end
+
+    test "can't mix choices and autocomplete" do
+      assert_raise Exceptions.InvalidState,
+                   "@autocomplete and choices are mutually exclusive.",
+                   fn ->
+                     Code.eval_quoted(
+                       quote do
+                         defmodule ChoicesAndComplete do
+                           use ChatInput
+
+                           @name "name"
+                           @description "description"
+
+                           @autocomplete true
+                           string "foo", "bar" do
+                             choice("baz", "foo")
+                           end
+                         end
+                       end
+                     )
+                   end
     end
   end
 

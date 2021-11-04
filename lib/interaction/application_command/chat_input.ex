@@ -110,6 +110,8 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
     @number => @state_option
   }
 
+  @autocompletables [@string, @integer, @number]
+
   defmacro __using__([]) do
     # Can't put this outside of __using__ due do Scope not being defined yet.
     default_scope = Macro.escape(%Scope{state: @state_start})
@@ -162,7 +164,7 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
   end
 
   @doc """
-  Defines a string option, can optionally be `@required true`.
+  Defines a string option, can optionally be `@required true` and `@autocomplete true`.
 
   ```elixir
   @required true
@@ -177,7 +179,7 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
   end
 
   @doc """
-  Defines an integer option, can optionally be `@required true`.
+  Defines an integer option, can optionally be `@required true` and `@autocomplete true`.
 
   ```elixir
   @required true
@@ -257,7 +259,7 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
   end
 
   @doc """
-  Defines a number option, can optionally be `@required true`.
+  Defines a number option, can optionally be `@required true` and `@autocomplete true`.
 
   ```elixir
   @required true
@@ -273,6 +275,8 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
 
   @doc """
   Defines choices for `string/3`, `integer/3`, and `number/3` options.
+
+  Note that this is mutually exclusive with `@autocomplete true`.
 
   ```elixir
   string "foo", "foos" do
@@ -331,9 +335,14 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
       handle_entry(unquote(next_state))
 
       required = Module.delete_attribute(__MODULE__, :required)
+      autocomplete = Module.delete_attribute(__MODULE__, :autocomplete)
 
       if not is_nil(required) and unquote(next_state) != unquote(@state_option) do
         raise InvalidState, :required
+      end
+
+      if not is_nil(autocomplete) and unquote(type) not in unquote(@autocompletables) do
+        raise InvalidState, :autocomplete
       end
 
       option = %{
@@ -353,10 +362,15 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
       alias Crux.Interaction.Util
 
       option =
-        Util.put_if(
-          option,
+        option
+        |> Util.put_if(
           :required,
           required,
+          &(not is_nil(&1))
+        )
+        |> Util.put_if(
+          :autocomplete,
+          autocomplete,
           &(not is_nil(&1))
         )
 
@@ -391,6 +405,10 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
         else
           option
         end
+
+      if option[:autocomplete] && option[:choices] not in [nil, []] do
+        raise InvalidState, {:autocomplete, :choices}
+      end
 
       @__crux_interaction_scope__ Scope.put_option(scope, option)
     end

@@ -266,6 +266,18 @@ defmodule Crux.Interaction.ApplicationCommand.Exceptions do
       %__MODULE__{message: message}
     end
 
+    def exception(:autocomplete) do
+      message = "@autocomplete is only valid for options."
+
+      %__MODULE__{message: message}
+    end
+
+    def exception({:autocomplete, :choices}) do
+      message = "@autocomplete and choices are mutually exclusive."
+
+      %__MODULE__{message: message}
+    end
+
     def exception(:required) do
       message = "@required is only valid for options."
 
