@@ -80,7 +80,7 @@ defmodule MyBot.Info do
 end
 ```
 
-A command using autocomplete to suggest the user options to chose from.
+A command using autocomplete to dynamically suggest the user options to chose from as they are typing:
 ```elixir
 defmodule MyBot.Tag do
   @moduledoc false
