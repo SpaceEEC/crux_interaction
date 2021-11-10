@@ -500,21 +500,23 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
 
     # as well as the others
     test "can't autocomplete user type" do
-      assert_raise Exceptions.InvalidState, "@autocomplete is only valid for options.", fn ->
-        Code.eval_quoted(
-          quote do
-            defmodule CompleteForUser do
-              use ChatInput
+      assert_raise Exceptions.InvalidState,
+                   "@autocomplete is only valid for string, integer, and number options.",
+                   fn ->
+                     Code.eval_quoted(
+                       quote do
+                         defmodule CompleteForUser do
+                           use ChatInput
 
-              @name "name"
-              @description "description"
+                           @name "name"
+                           @description "description"
 
-              @autocomplete true
-              user("foo", "bar")
-            end
-          end
-        )
-      end
+                           @autocomplete true
+                           user("foo", "bar")
+                         end
+                       end
+                     )
+                   end
     end
 
     test "can't mix choices and autocomplete" do

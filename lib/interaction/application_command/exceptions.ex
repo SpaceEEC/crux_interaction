@@ -267,7 +267,7 @@ defmodule Crux.Interaction.ApplicationCommand.Exceptions do
     end
 
     def exception(:autocomplete) do
-      message = "@autocomplete is only valid for options."
+      message = "@autocomplete is only valid for string, integer, and number options."
 
       %__MODULE__{message: message}
     end
