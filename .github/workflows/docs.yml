@@ -1,4 +1,4 @@
-name: Build Trunk Documentation
+name: Documentation
 
 on:
   push:
