@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="project" content="crux_interaction v0.1.0-dev">
+    <title>Crux.Interaction.MessageComponent.SelectMenu — crux_interaction v0.1.0-dev</title>
+    <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
+    <script src="dist/sidebar_items-f5005a1058.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName" translate="no">
+crux_interaction      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0-dev
+      </strong>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  <span translate="no">Crux.Interaction.MessageComponent.SelectMenu</span> 
+  <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L1" title="View Source" class="view-source" rel="help">
+      <span class="icon-code" aria-hidden="true"></span>
+      <span class="sr-only">View Source</span>
+    </a>
+</h1>
+
+
+  <section id="moduledoc">
+<p>Select menus are another interactive component that renders on messages.</p><p>For select menus the following limitations apply:</p><ul><li>Select menus must be in action rows.</li><li>There may be one select menu in an action row.</li></ul><p>You may also want to checkout the <a href="https://discord.com/developers/docs/interactions/message-components#select-menus">Discord Developer Documentation about select menus</a>.</p>  </section>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+        </div>
+      </div>
+  </div>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#add_options/2" translate="no">add_options(select_menu, option)</a>
+        </div>
+          <div class="summary-synopsis"><p>Add one or multiple options to the select menu.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#new/2" translate="no">new(custom_id, option_s \\ [])</a>
+        </div>
+          <div class="summary-synopsis"><p>Create a new select menu with the given custom_id and option(s).</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_disabled/2" translate="no">put_disabled(select_menu, disabled)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set whether the select menu is disabled.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_max_values/2" translate="no">put_max_values(select_menu, max_values)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set the maximum number of items that may be chosen.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_min_values/2" translate="no">put_min_values(select_menu, min_values)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set the minimum number of items that must be chosen.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_placeholder/2" translate="no">put_placeholder(select_menu, placeholder)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set a custom placeholder to be shown if nothing is selected.</p></div>
+      </div>
+  </div>
+  </section>
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L29" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">t() :: %Crux.Interaction.MessageComponent.SelectMenu{
+  custom_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  disabled: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
+  max_values: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>() | nil,
+  min_values: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  options: <a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>(),
+  placeholder: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  type: 3
+}</pre>
+      </div>
+
+  </section>
+</section>
+    </div>
+  </section>
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions    </h1>
+    <div class="functions-list">
+<section class="detail" id="add_options/2">
+  <div class="detail-header">
+    <a href="#add_options/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">add_options(select_menu, option)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">add_options(<a href="#t:t/0">t</a>(), <a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">add_options(<a href="#t:t/0">t</a>(), [<a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()]) ::
+  <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Add one or multiple options to the select menu.</p>  </section>
+</section>
+<section class="detail" id="new/2">
+    <span id="new/1"></span>
+  <div class="detail-header">
+    <a href="#new/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">new(custom_id, option_s \\ [])</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">new(
+  custom_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  option_s ::
+    <a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()
+    | [<a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()]
+) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Create a new select menu with the given custom_id and option(s).</p><p>There is a maximum of <code class="inline">100</code> characters for the custom id and a limit of <code class="inline">25</code> options.</p>  </section>
+</section>
+<section class="detail" id="put_disabled/2">
+  <div class="detail-header">
+    <a href="#put_disabled/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_disabled(select_menu, disabled)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L127" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_disabled(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set whether the select menu is disabled.</p>  </section>
+</section>
+<section class="detail" id="put_max_values/2">
+  <div class="detail-header">
+    <a href="#put_max_values/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_max_values(select_menu, max_values)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_max_values(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set the maximum number of items that may be chosen.</p>  </section>
+</section>
+<section class="detail" id="put_min_values/2">
+  <div class="detail-header">
+    <a href="#put_min_values/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_min_values(select_menu, min_values)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L107" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_min_values(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set the minimum number of items that must be chosen.</p>  </section>
+</section>
+<section class="detail" id="put_placeholder/2">
+  <div class="detail-header">
+    <a href="#put_placeholder/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_placeholder(select_menu, placeholder)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_placeholder(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set a custom placeholder to be shown if nothing is selected.</p><p>There is a maximum of <code class="inline">100</code> characters allowed.</p>  </section>
+</section>
+    </div>
+  </section>
+      <footer class="footer">
+
+        <p>
+          Find it on Hex:
+          <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
+          <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
+
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component/select_menu.ex">(current file)</a>
+        </p>
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button display-settings">
+            Settings
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>

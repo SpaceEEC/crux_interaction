@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.25.1">
+    <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
     <title>Crux.Interaction.ApplicationCommand.ChatInput — crux_interaction v0.1.0-dev</title>
-    <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
-    <script src="dist/sidebar_items-cc0067f2b1.js"></script>
+    <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
+    <script src="dist/sidebar_items-f5005a1058.js"></script>
       <script src="docs_config.js"></script>
-    <script async src="dist/app-f27ff079945e43879c46.js"></script>
+    <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
   <body data-type="modules">
     <script>
@@ -46,9 +46,9 @@
 
   <div class="sidebar-header">
     <div class="sidebar-projectDetails">
-      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName">
+      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName" translate="no">
 crux_interaction      </a>
-      <strong class="sidebar-projectVersion">
+      <strong class="sidebar-projectVersion" translate="no">
         v0.1.0-dev
       </strong>
     </div>
@@ -68,16 +68,17 @@ crux_interaction      </a>
   <div class="content-outer">
     <div id="content" class="content-inner">
 
-      <h1>
-        Crux.Interaction.ApplicationCommand.ChatInput <small class="app-vsn">(crux_interaction v0.1.0-dev)</small>
-          <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L1" title="View Source" class="view-source" rel="help">
-            <span class="icon-code" aria-hidden="true"></span>
-            <span class="sr-only">View Source</span>
-          </a>
-      </h1>
+<h1>
+  <span translate="no">Crux.Interaction.ApplicationCommand.ChatInput</span> 
+  <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L1" title="View Source" class="view-source" rel="help">
+      <span class="icon-code" aria-hidden="true"></span>
+      <span class="sr-only">View Source</span>
+    </a>
+</h1>
 
 
-        <section id="moduledoc">
+  <section id="moduledoc">
 <p>Provides a DSL to define chat input application commands A.K.A. slash commands.</p><h2 id="module-restrictions" class="section-heading">
   <a href="#module-restrictions" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Restrictions
@@ -86,26 +87,26 @@ crux_interaction      </a>
   <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
-<p>A basic ping command:</p><pre><code class="makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Ping</span><span class="w"> </span><span class="k" data-group-id="4297204859-1">do</span><span class="w">
+<p>A basic ping command:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Ping</span><span class="w"> </span><span class="k" data-group-id="6267840735-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
 
   </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;ping&quot;</span><span class="w">
   </span><span class="na">@description</span><span class="w"> </span><span class="s">&quot;Pongs right back at you!&quot;</span><span class="w">
-</span><span class="k" data-group-id="4297204859-1">end</span></code></pre><p>A command using choices:</p><pre><code class="makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Greet</span><span class="w"> </span><span class="k" data-group-id="4203047248-1">do</span><span class="w">
+</span><span class="k" data-group-id="6267840735-1">end</span></code></pre><p>A command using choices:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Greet</span><span class="w"> </span><span class="k" data-group-id="0965295780-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
 
   </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;greet&quot;</span><span class="w">
   </span><span class="na">@description</span><span class="w"> </span><span class="s">&quot;Greets a user&quot;</span><span class="w">
 
   </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
-  </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The type of the greeting&quot;</span><span class="w"> </span><span class="k" data-group-id="4203047248-2">do</span><span class="w">
+  </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The type of the greeting&quot;</span><span class="w"> </span><span class="k" data-group-id="0965295780-2">do</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;politely&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;politely&quot;</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;casually&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;casually&quot;</span><span class="w">
-  </span><span class="k" data-group-id="4203047248-2">end</span><span class="w">
+  </span><span class="k" data-group-id="0965295780-2">end</span><span class="w">
 
   </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
   </span><span class="n">user</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The user you&#39;d like to greet&quot;</span><span class="w">
-</span><span class="k" data-group-id="4203047248-1">end</span></code></pre><p>A command using sub commands.<br/>Sub command groups can be used to nest one level further:</p><pre><code class="makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Info</span><span class="w"> </span><span class="k" data-group-id="1252348827-1">do</span><span class="w">
+</span><span class="k" data-group-id="0965295780-1">end</span></code></pre><p>A command using sub commands.<br/>Sub command groups can be used to nest one level further:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Info</span><span class="w"> </span><span class="k" data-group-id="7198469334-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
   
   </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;info&quot;</span><span class="w">
@@ -113,21 +114,21 @@ crux_interaction      </a>
   </span><span class="c1"># Only specific users / roles can use this command. (Needs to be separately specified per guild)</span><span class="w">
   </span><span class="na">@default_permission</span><span class="w"> </span><span class="no">false</span><span class="w">
 
-  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a user&quot;</span><span class="w"> </span><span class="k" data-group-id="1252348827-2">do</span><span class="w">
+  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a user&quot;</span><span class="w"> </span><span class="k" data-group-id="7198469334-2">do</span><span class="w">
     </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
     </span><span class="n">user</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The user you want to show info about&quot;</span><span class="w">
-  </span><span class="k" data-group-id="1252348827-2">end</span><span class="w">
+  </span><span class="k" data-group-id="7198469334-2">end</span><span class="w">
 
-  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;channel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a channel&quot;</span><span class="w"> </span><span class="k" data-group-id="1252348827-3">do</span><span class="w">
+  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;channel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a channel&quot;</span><span class="w"> </span><span class="k" data-group-id="7198469334-3">do</span><span class="w">
     </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
     </span><span class="n">channel</span><span class="w"> </span><span class="s">&quot;channel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The channel you want to show basic info about&quot;</span><span class="w">
-  </span><span class="k" data-group-id="1252348827-3">end</span><span class="w">
+  </span><span class="k" data-group-id="7198469334-3">end</span><span class="w">
 
-  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a role&quot;</span><span class="w"> </span><span class="k" data-group-id="1252348827-4">do</span><span class="w">
+  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a role&quot;</span><span class="w"> </span><span class="k" data-group-id="7198469334-4">do</span><span class="w">
     </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
     </span><span class="n">role</span><span class="w"> </span><span class="s">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The role you want to show basic info about&quot;</span><span class="w">
-  </span><span class="k" data-group-id="1252348827-4">end</span><span class="w">
-</span><span class="k" data-group-id="1252348827-1">end</span></code></pre><p>A command using autocomplete to dynamically suggest the user options to chose from as they are typing:</p><pre><code class="makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Tag</span><span class="w"> </span><span class="k" data-group-id="9417593542-1">do</span><span class="w">
+  </span><span class="k" data-group-id="7198469334-4">end</span><span class="w">
+</span><span class="k" data-group-id="7198469334-1">end</span></code></pre><p>A command using autocomplete to dynamically suggest the user options to chose from as they are typing:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Tag</span><span class="w"> </span><span class="k" data-group-id="0732403496-1">do</span><span class="w">
   </span><span class="na">@moduledoc</span><span class="w"> </span><span class="no">false</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
 
@@ -137,105 +138,105 @@ crux_interaction      </a>
   </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
   </span><span class="na">@autocomplete</span><span class="w"> </span><span class="no">true</span><span class="w">
   </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The name of the tag&quot;</span><span class="w">
-</span><span class="k" data-group-id="9417593542-1">end</span></code></pre>        </section>
+</span><span class="k" data-group-id="0732403496-1">end</span></code></pre>  </section>
 
-        <section id="summary" class="details-list">
-          <h1 class="section-heading">
-            <a class="hover-link" href="#summary">
-              <span class="icon-link" aria-hidden="true"></span>
-              <span class="sr-only">Link to this section</span>
-            </a>
-            Summary
-          </h1>
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
     </h2>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#boolean/2">boolean(name, description)</a>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#boolean/2" translate="no">boolean(name, description)</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a boolean option, can optionally be <code class="inline">@required true</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#channel/2" translate="no">channel(name, description)</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a channel option, can optionally be <code class="inline">@required true</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#choice/2" translate="no">choice(name, value)</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines choices for <a href="#string/3"><code class="inline">string/3</code></a>, <a href="#integer/3"><code class="inline">integer/3</code></a>, and <a href="#number/3"><code class="inline">number/3</code></a> options.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#integer/3" translate="no">integer(name, description, do_block \\ [do: nil])</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines an integer option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#mentionable/2" translate="no">mentionable(name, description)</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a mentionable option, this is an union of <a href="#user/2"><code class="inline">user/2</code></a> and <a href="#role/2"><code class="inline">role/2</code></a>, can optionally be <code class="inline">@required true</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#number/3" translate="no">number(name, description, do_block \\ [do: nil])</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a number option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#role/2" translate="no">role(name, description)</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a role option, can optionally be <code class="inline">@required true</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#string/3" translate="no">string(name, description, do_block \\ [do: nil])</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a string option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#subcommand/3" translate="no">subcommand(name, description, do_block \\ [do: nil])</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a sub command option.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#subcommand_group/3" translate="no">subcommand_group(name, description, do_block)</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a sub command group option.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#user/2" translate="no">user(name, description)</a>
+        </div>
+          <div class="summary-synopsis"><p>Defines a user option, can optionally be <code class="inline">@required true</code>.</p></div>
+      </div>
   </div>
-    <div class="summary-synopsis"><p>Defines a boolean option, can optionally be <code class="inline">@required true</code>.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#channel/2">channel(name, description)</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a channel option, can optionally be <code class="inline">@required true</code>.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#choice/2">choice(name, value)</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines choices for <a href="#string/3"><code class="inline">string/3</code></a>, <a href="#integer/3"><code class="inline">integer/3</code></a>, and <a href="#number/3"><code class="inline">number/3</code></a> options.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#integer/3">integer(name, description, do_block \\ [do: nil])</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines an integer option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#mentionable/2">mentionable(name, description)</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a mentionable option, this is an union of <a href="#user/2"><code class="inline">user/2</code></a> and <a href="#role/2"><code class="inline">role/2</code></a>, can optionally be <code class="inline">@required true</code>.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#number/3">number(name, description, do_block \\ [do: nil])</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a number option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#role/2">role(name, description)</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a role option, can optionally be <code class="inline">@required true</code>.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#string/3">string(name, description, do_block \\ [do: nil])</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a string option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#subcommand/3">subcommand(name, description, do_block \\ [do: nil])</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a sub command option.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#subcommand_group/3">subcommand_group(name, description, do_block)</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a sub command group option.</p></div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#user/2">user(name, description)</a>
-  </div>
-    <div class="summary-synopsis"><p>Defines a user option, can optionally be <code class="inline">@required true</code>.</p></div>
-</div>
-  </div>
-        </section>
+  </section>
 
-        <section id="functions" class="details-list">
-          <h1 class="section-heading">
-            <a class="hover-link" href="#functions">
-              <span class="icon-link" aria-hidden="true"></span>
-              <span class="sr-only">Link to this section</span>
-            </a>
-Functions          </h1>
-          <div class="functions-list">
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions    </h1>
+    <div class="functions-list">
 <section class="detail" id="boolean/2">
   <div class="detail-header">
     <a href="#boolean/2" class="detail-link" title="Link to this macro">
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">boolean(name, description)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L205" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">boolean(name, description)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L205" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -245,7 +246,7 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a boolean option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines a boolean option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">boolean</span><span class="w"> </span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Whether you want to enable or disable this.&quot;</span></code></pre>  </section>
 </section>
 <section class="detail" id="channel/2">
@@ -254,8 +255,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">channel(name, description)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L231" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">channel(name, description)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L231" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -265,7 +266,7 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a channel option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines a channel option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">channel</span><span class="w"> </span><span class="s">&quot;channel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The channel you notifications to be sent to.&quot;</span></code></pre>  </section>
 </section>
 <section class="detail" id="choice/2">
@@ -274,8 +275,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">choice(name, value)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L299" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">choice(name, value)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L299" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -285,20 +286,20 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines choices for <a href="#string/3"><code class="inline">string/3</code></a>, <a href="#integer/3"><code class="inline">integer/3</code></a>, and <a href="#number/3"><code class="inline">number/3</code></a> options.</p><p>Note that this is mutually exclusive with <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir"><span class="n">string</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="3610648838-1">do</span><span class="w">
+<p>Defines choices for <a href="#string/3"><code class="inline">string/3</code></a>, <a href="#integer/3"><code class="inline">integer/3</code></a>, and <a href="#number/3"><code class="inline">number/3</code></a> options.</p><p>Note that this is mutually exclusive with <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="n">string</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="5480189573-1">do</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="w">
-</span><span class="k" data-group-id="3610648838-1">end</span><span class="w">
+</span><span class="k" data-group-id="5480189573-1">end</span><span class="w">
 
-</span><span class="n">integer</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="3610648838-2">do</span><span class="w">
+</span><span class="n">integer</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="5480189573-2">do</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="k" data-group-id="3610648838-2">end</span><span class="w">
+</span><span class="k" data-group-id="5480189573-2">end</span><span class="w">
 
-</span><span class="n">number</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="3610648838-3">do</span><span class="w">
+</span><span class="n">number</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="5480189573-3">do</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="w">
-</span><span class="k" data-group-id="3610648838-3">end</span></code></pre>  </section>
+</span><span class="k" data-group-id="5480189573-3">end</span></code></pre>  </section>
 </section>
 <section class="detail" id="integer/3">
     <span id="integer/2"></span>
@@ -307,8 +308,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">integer(name, description, do_block \\ [do: nil])</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L192" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">integer(name, description, do_block \\ [do: nil])</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L192" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -318,7 +319,7 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines an integer option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines an integer option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">integer</span><span class="w"> </span><span class="s">&quot;amount&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The amount of 🧀 you want to donate.&quot;</span></code></pre><p>You can optionally define choices the user has to pick one from, see <a href="#choice/2"><code class="inline">choice/2</code></a>.</p>  </section>
 </section>
 <section class="detail" id="mentionable/2">
@@ -327,8 +328,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">mentionable(name, description)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L257" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">mentionable(name, description)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L257" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -338,7 +339,7 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a mentionable option, this is an union of <a href="#user/2"><code class="inline">user/2</code></a> and <a href="#role/2"><code class="inline">role/2</code></a>, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines a mentionable option, this is an union of <a href="#user/2"><code class="inline">user/2</code></a> and <a href="#role/2"><code class="inline">role/2</code></a>, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">mentionable</span><span class="w"> </span><span class="s">&quot;target&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The user or role to block from this channel&quot;</span></code></pre>  </section>
 </section>
 <section class="detail" id="number/3">
@@ -348,8 +349,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">number(name, description, do_block \\ [do: nil])</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L272" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">number(name, description, do_block \\ [do: nil])</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L272" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -359,7 +360,7 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a number option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines a number option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">number</span><span class="w"> </span><span class="s">&quot;number&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Give me some number&quot;</span></code></pre><p>You can optionally define choices the user has to pick one from, see <a href="#choice/2"><code class="inline">choice/2</code></a>.</p>  </section>
 </section>
 <section class="detail" id="role/2">
@@ -368,8 +369,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">role(name, description)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L244" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">role(name, description)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L244" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -379,7 +380,7 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a role option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines a role option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">role</span><span class="w"> </span><span class="s">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The role you want to be mentioned alongside notifications.&quot;</span></code></pre>  </section>
 </section>
 <section class="detail" id="string/3">
@@ -389,8 +390,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">string(name, description, do_block \\ [do: nil])</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L177" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">string(name, description, do_block \\ [do: nil])</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L177" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -400,7 +401,7 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a string option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines a string option, can optionally be <code class="inline">@required true</code> and <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The name of the thing you want to create.&quot;</span></code></pre><p>You can optionally define choices the user has to pick one from, see <a href="#choice/2"><code class="inline">choice/2</code></a>.</p>  </section>
 </section>
 <section class="detail" id="subcommand/3">
@@ -410,8 +411,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">subcommand(name, description, do_block \\ [do: nil])</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L149" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">subcommand(name, description, do_block \\ [do: nil])</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L149" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -421,9 +422,9 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a sub command option.</p><pre><code class="makeup elixir"><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="1607912344-1">do</span><span class="w">
+<p>Defines a sub command option.</p><pre><code class="makeup elixir" translate="no"><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="6766751573-1">do</span><span class="w">
   </span><span class="c1"># Optionally further options</span><span class="w">
-</span><span class="k" data-group-id="1607912344-1">end</span></code></pre>  </section>
+</span><span class="k" data-group-id="6766751573-1">end</span></code></pre>  </section>
 </section>
 <section class="detail" id="subcommand_group/3">
   <div class="detail-header">
@@ -431,8 +432,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">subcommand_group(name, description, do_block)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L162" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">subcommand_group(name, description, do_block)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L162" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -442,9 +443,9 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a sub command group option.</p><pre><code class="makeup elixir"><span class="n">subcommand_group</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="8689239574-1">do</span><span class="w">
+<p>Defines a sub command group option.</p><pre><code class="makeup elixir" translate="no"><span class="n">subcommand_group</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="6907356134-1">do</span><span class="w">
   </span><span class="c1"># Required sub commands</span><span class="w">
-</span><span class="k" data-group-id="8689239574-1">end</span></code></pre>  </section>
+</span><span class="k" data-group-id="6907356134-1">end</span></code></pre>  </section>
 </section>
 <section class="detail" id="user/2">
   <div class="detail-header">
@@ -452,8 +453,8 @@ Functions          </h1>
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this macro</span>
     </a>
-    <h1 class="signature">user(name, description)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/chat_input.ex#L218" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">user(name, description)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/chat_input.ex#L218" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -463,21 +464,29 @@ Functions          </h1>
 
   <section class="docstring">
 
-<p>Defines a user option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
+<p>Defines a user option, can optionally be <code class="inline">@required true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
 </span><span class="n">user</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The user you want to interact with.&quot;</span></code></pre>  </section>
 </section>
-          </div>
-        </section>
+    </div>
+  </section>
       <footer class="footer">
+
+        <p>
+          Find it on Hex:
+          <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
+          <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
+
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/application_command/chat_input.ex">(current file)</a>
+        </p>
         <p>
           <span class="line">
             Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.25.1) for the
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
           </span>
           <span class="line">
             Designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
           </span>
         </p>
         <p>
@@ -485,15 +494,11 @@ Functions          </h1>
           <button class="line footer-button display-shortcuts-help">
             Display keyboard shortcuts
           </button>
-          <button class="line footer-button night-mode-toggle">
-            Toggle night mode
-          </button>
           <button class="line footer-button display-quick-switch">
             Go to a HexDocs package
           </button>
-          <button class="line footer-button tooltips-toggle">
-            <span class="tooltips-option-disable">Disable tooltips</span>
-            <span class="tooltips-option-enable">Enable tooltips</span>
+          <button class="line footer-button display-settings">
+            Settings
           </button>
         </p>
       </footer>

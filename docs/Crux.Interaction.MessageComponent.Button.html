@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="project" content="crux_interaction v0.1.0-dev">
+    <title>Crux.Interaction.MessageComponent.Button — crux_interaction v0.1.0-dev</title>
+    <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
+    <script src="dist/sidebar_items-f5005a1058.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName" translate="no">
+crux_interaction      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0-dev
+      </strong>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  <span translate="no">Crux.Interaction.MessageComponent.Button</span> 
+  <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L1" title="View Source" class="view-source" rel="help">
+      <span class="icon-code" aria-hidden="true"></span>
+      <span class="sr-only">View Source</span>
+    </a>
+</h1>
+
+
+  <section id="moduledoc">
+<p>Buttons are interactive components.</p><p>For buttons the following limitations apply:</p><ul><li>Buttons must be in action rows.</li><li>There may be up to 5 buttons per action row.</li><li>All buttons require at least one of <code class="inline">label</code> and <code class="inline">emoji</code>.</li></ul><p>You may also want to checkout the <a href="https://discord.com/developers/docs/interactions/message-components#buttons">Discord Developer Documentation about buttons</a>.</p>  </section>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:button_style/0" translate="no">button_style()</a>
+        </div>
+          <div class="summary-synopsis"><p>Available button styles</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+        </div>
+      </div>
+  </div>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#button_style_danger/0" translate="no">button_style_danger()</a>
+        </div>
+          <div class="summary-synopsis"><p>The danger style, a red button.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#button_style_link/0" translate="no">button_style_link()</a>
+        </div>
+          <div class="summary-synopsis"><p>The links style, a grey button with a &quot;link&quot; icon to signify its purpose.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#button_style_primary/0" translate="no">button_style_primary()</a>
+        </div>
+          <div class="summary-synopsis"><p>The primary style, a blurple button.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#button_style_secondary/0" translate="no">button_style_secondary()</a>
+        </div>
+          <div class="summary-synopsis"><p>The secondary style, a grey button.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#button_style_success/0" translate="no">button_style_success()</a>
+        </div>
+          <div class="summary-synopsis"><p>The success style, a green button.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#new/2" translate="no">new(style, custom_id_or_url)</a>
+        </div>
+          <div class="summary-synopsis"><p>Create a new button using the given style and <code class="inline">custom_id</code> / <code class="inline">url</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_disabled/2" translate="no">put_disabled(button, disabled)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set whether a button is disabled. (I.e. can't be clicked)</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_emoji/2" translate="no">put_emoji(button, emoji)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set the emoji for a button.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_label/2" translate="no">put_label(button, label)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set the label for a button.</p></div>
+      </div>
+  </div>
+  </section>
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types    </h1>
+    <div class="types-list">
+<section class="detail" id="t:button_style/0">
+  <div class="detail-header">
+    <a href="#t:button_style/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">button_style()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L44" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">button_style() :: 1..5</pre>
+      </div>
+
+<p>Available button styles:</p><ul><li><code class="inline">primary</code> - 1</li><li><code class="inline">secondary</code> - 2</li><li><code class="inline">success</code> - 3</li><li><code class="inline">danger</code> - 4</li><li><code class="inline">link</code> - 5</li></ul><p>There is an image preview on the <a href="https://discord.com/developers/docs/interactions/message-components#button-object-button-styles">Discord Developer Documentation</a>.</p>  </section>
+</section>
+<section class="detail" id="t:t/0">
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L82" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">t() :: %Crux.Interaction.MessageComponent.Button{
+  custom_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  disabled: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
+  emoji:
+    %{
+      name: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+      id: Crux.Structs.Snowflake.t() | nil,
+      animated: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil
+    }
+    | nil,
+  label: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  style: <a href="#t:button_style/0">button_style</a>(),
+  type: 2,
+  url: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil
+}</pre>
+      </div>
+
+  </section>
+</section>
+    </div>
+  </section>
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions    </h1>
+    <div class="functions-list">
+<section class="detail" id="button_style_danger/0">
+  <div class="detail-header">
+    <a href="#button_style_danger/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">button_style_danger()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">button_style_danger() :: <a href="#t:button_style/0">button_style</a>()</pre>
+      </div>
+
+<p>The danger style, a red button.</p>  </section>
+</section>
+<section class="detail" id="button_style_link/0">
+  <div class="detail-header">
+    <a href="#button_style_link/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">button_style_link()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L79" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">button_style_link() :: <a href="#t:button_style/0">button_style</a>()</pre>
+      </div>
+
+<p>The links style, a grey button with a &quot;link&quot; icon to signify its purpose.</p>  </section>
+</section>
+<section class="detail" id="button_style_primary/0">
+  <div class="detail-header">
+    <a href="#button_style_primary/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">button_style_primary()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L51" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">button_style_primary() :: <a href="#t:button_style/0">button_style</a>()</pre>
+      </div>
+
+<p>The primary style, a blurple button.</p>  </section>
+</section>
+<section class="detail" id="button_style_secondary/0">
+  <div class="detail-header">
+    <a href="#button_style_secondary/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">button_style_secondary()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">button_style_secondary() :: <a href="#t:button_style/0">button_style</a>()</pre>
+      </div>
+
+<p>The secondary style, a grey button.</p>  </section>
+</section>
+<section class="detail" id="button_style_success/0">
+  <div class="detail-header">
+    <a href="#button_style_success/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">button_style_success()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L65" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">button_style_success() :: <a href="#t:button_style/0">button_style</a>()</pre>
+      </div>
+
+<p>The success style, a green button.</p>  </section>
+</section>
+<section class="detail" id="new/2">
+  <div class="detail-header">
+    <a href="#new/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">new(style, custom_id_or_url)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">new(link_style :: <a href="#t:button_style/0">button_style</a>(), url :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">new(non_link_style :: <a href="#t:button_style/0">button_style</a>(), custom_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Create a new button using the given style and <code class="inline">custom_id</code> / <code class="inline">url</code>.</p><p>See the <code class="inline">button_style___</code> functions in this module.<br/>There is a maximum of <code class="inline">100</code> characters for the <code class="inline">custom_id</code> (doesn't apply to the link style).</p>  </section>
+</section>
+<section class="detail" id="put_disabled/2">
+  <div class="detail-header">
+    <a href="#put_disabled/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_disabled(button, disabled)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L160" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_disabled(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set whether a button is disabled. (I.e. can't be clicked)</p>  </section>
+</section>
+<section class="detail" id="put_emoji/2">
+  <div class="detail-header">
+    <a href="#put_emoji/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_emoji(button, emoji)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L135" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_emoji(
+  <a href="#t:t/0">t</a>(),
+  emoji :: %{
+    name: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+    id: Crux.Structs.Snowflake.t() | nil,
+    animated: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil
+  }
+) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set the emoji for a button.</p>  </section>
+</section>
+<section class="detail" id="put_label/2">
+  <div class="detail-header">
+    <a href="#put_label/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_label(button, label)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/button.ex#L146" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_label(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set the label for a button.</p><p>There is a maximum of <code class="inline">80</code> characters.</p>  </section>
+</section>
+    </div>
+  </section>
+      <footer class="footer">
+
+        <p>
+          Find it on Hex:
+          <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
+          <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
+
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component/button.ex">(current file)</a>
+        </p>
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button display-settings">
+            Settings
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>

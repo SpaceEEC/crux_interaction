@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.25.1">
+    <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
     <title>Crux.Interaction.ApplicationCommand.Message — crux_interaction v0.1.0-dev</title>
-    <link rel="stylesheet" href="dist/elixir-a172fe91e725dcb259e2.css" />
-    <script src="dist/sidebar_items-cc0067f2b1.js"></script>
+    <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
+    <script src="dist/sidebar_items-f5005a1058.js"></script>
       <script src="docs_config.js"></script>
-    <script async src="dist/app-f27ff079945e43879c46.js"></script>
+    <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
   <body data-type="modules">
     <script>
@@ -46,9 +46,9 @@
 
   <div class="sidebar-header">
     <div class="sidebar-projectDetails">
-      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName">
+      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName" translate="no">
 crux_interaction      </a>
-      <strong class="sidebar-projectVersion">
+      <strong class="sidebar-projectVersion" translate="no">
         v0.1.0-dev
       </strong>
     </div>
@@ -68,38 +68,47 @@ crux_interaction      </a>
   <div class="content-outer">
     <div id="content" class="content-inner">
 
-      <h1>
-        Crux.Interaction.ApplicationCommand.Message <small class="app-vsn">(crux_interaction v0.1.0-dev)</small>
-          <a href="https://github.com/SpaceEEC/crux_interaction/blob/master/lib/interaction/application_command/message.ex#L1" title="View Source" class="view-source" rel="help">
-            <span class="icon-code" aria-hidden="true"></span>
-            <span class="sr-only">View Source</span>
-          </a>
-      </h1>
+<h1>
+  <span translate="no">Crux.Interaction.ApplicationCommand.Message</span> 
+  <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/message.ex#L1" title="View Source" class="view-source" rel="help">
+      <span class="icon-code" aria-hidden="true"></span>
+      <span class="sr-only">View Source</span>
+    </a>
+</h1>
 
 
-        <section id="moduledoc">
+  <section id="moduledoc">
 <p>Provides a DSL to define message application commands A.K.A. context menus.</p><p>Names may have spaces and can be up to 32 characters long.</p><p>It's recommend to checkout the <a href="https://discord.com/developers/docs/interactions/application-commands#message-commands">Discord Developer Documentation on Message Commands</a>.</p><h2 id="module-examples" class="section-heading">
   <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
-<pre><code class="makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.StarMessage</span><span class="w"> </span><span class="k" data-group-id="6882617462-1">do</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.StarMessage</span><span class="w"> </span><span class="k" data-group-id="0762733231-1">do</span><span class="w">
     </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.Message</span><span class="w">
 
     </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;Star this Message&quot;</span><span class="w">
     </span><span class="c1"># Message commands can&#39;t have a @description</span><span class="w">
-</span><span class="k" data-group-id="6882617462-1">end</span></code></pre>        </section>
+</span><span class="k" data-group-id="0762733231-1">end</span></code></pre>  </section>
 
 
       <footer class="footer">
+
+        <p>
+          Find it on Hex:
+          <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
+          <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
+
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/application_command/message.ex">(current file)</a>
+        </p>
         <p>
           <span class="line">
             Built using
-            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.25.1) for the
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
           </span>
           <span class="line">
             Designed by
-            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
           </span>
         </p>
         <p>
@@ -107,15 +116,11 @@ crux_interaction      </a>
           <button class="line footer-button display-shortcuts-help">
             Display keyboard shortcuts
           </button>
-          <button class="line footer-button night-mode-toggle">
-            Toggle night mode
-          </button>
           <button class="line footer-button display-quick-switch">
             Go to a HexDocs package
           </button>
-          <button class="line footer-button tooltips-toggle">
-            <span class="tooltips-option-disable">Disable tooltips</span>
-            <span class="tooltips-option-enable">Enable tooltips</span>
+          <button class="line footer-button display-settings">
+            Settings
           </button>
         </p>
       </footer>

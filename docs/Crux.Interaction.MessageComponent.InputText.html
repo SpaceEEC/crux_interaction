@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="project" content="crux_interaction v0.1.0-dev">
+    <title>Crux.Interaction.MessageComponent.InputText — crux_interaction v0.1.0-dev</title>
+    <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
+    <script src="dist/sidebar_items-f5005a1058.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName" translate="no">
+crux_interaction      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0-dev
+      </strong>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  <span translate="no">Crux.Interaction.MessageComponent.InputText</span> 
+  <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L1" title="View Source" class="view-source" rel="help">
+      <span class="icon-code" aria-hidden="true"></span>
+      <span class="sr-only">View Source</span>
+    </a>
+</h1>
+
+
+  <section id="moduledoc">
+<h1>THIS IS NOT RELEASED / AVAILABLE YET.</h1><h1>EVERYTHING IS SUBJECT TO CHANGE.</h1><p>For input text the following limitations apply:</p><ul><li>Input text may only be used in an interaction response. (Not in regular messages)</li><li>Input text must be in action rows.</li><li>There may only be one input text per action row.</li></ul><p>You may also want to checkout the Discord Developer Documentation about input text. (Does not exist yet)</p>  </section>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+        </div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:text_style/0" translate="no">text_style()</a>
+        </div>
+          <div class="summary-synopsis"><p>Availabel text styles</p></div>
+      </div>
+  </div>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#new/3" translate="no">new(text_style, custom_id, label)</a>
+        </div>
+          <div class="summary-synopsis"><p>Create an input text with the given <code class="inline">custom_id</code> and <code class="inline">label</code>.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_max_length/2" translate="no">put_max_length(input_text, max_length)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set the maximum length required for the text.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_min_length/2" translate="no">put_min_length(input_text, min_length)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set the minimum length required for the text.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_placeholder/2" translate="no">put_placeholder(input_text, placeholder)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set the placeholder text to show if no text was provided (yet).</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#text_style_paragraph/0" translate="no">text_style_paragraph()</a>
+        </div>
+          <div class="summary-synopsis"><p>The paragraph text syle, a multi line text box.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#text_style_short/0" translate="no">text_style_short()</a>
+        </div>
+          <div class="summary-synopsis"><p>The short text style, a single row for text.</p></div>
+      </div>
+  </div>
+  </section>
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L49" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">t() :: %Crux.Interaction.MessageComponent.InputText{
+  custom_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  label: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  max_length: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>() | nil,
+  min_length: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
+  placeholder: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  style: <a href="#t:text_style/0">text_style</a>(),
+  type: 4
+}</pre>
+      </div>
+
+  </section>
+</section>
+<section class="detail" id="t:text_style/0">
+  <div class="detail-header">
+    <a href="#t:text_style/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">text_style()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">text_style() :: 1..2</pre>
+      </div>
+
+<p>Availabel text styles:</p><ul><li><code class="inline">short</code> - 1</li><li><code class="inline">paragraph</code> - 2</li></ul>  </section>
+</section>
+    </div>
+  </section>
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions    </h1>
+    <div class="functions-list">
+<section class="detail" id="new/3">
+  <div class="detail-header">
+    <a href="#new/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">new(text_style, custom_id, label)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L64" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">new(<a href="#t:text_style/0">text_style</a>(), custom_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), label :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Create an input text with the given <code class="inline">custom_id</code> and <code class="inline">label</code>.</p>  </section>
+</section>
+<section class="detail" id="put_max_length/2">
+  <div class="detail-header">
+    <a href="#put_max_length/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_max_length(input_text, max_length)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L94" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_max_length(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set the maximum length required for the text.</p>  </section>
+</section>
+<section class="detail" id="put_min_length/2">
+  <div class="detail-header">
+    <a href="#put_min_length/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_min_length(input_text, min_length)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L84" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_min_length(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set the minimum length required for the text.</p>  </section>
+</section>
+<section class="detail" id="put_placeholder/2">
+  <div class="detail-header">
+    <a href="#put_placeholder/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_placeholder(input_text, placeholder)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L74" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_placeholder(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set the placeholder text to show if no text was provided (yet).</p>  </section>
+</section>
+<section class="detail" id="text_style_paragraph/0">
+  <div class="detail-header">
+    <a href="#text_style_paragraph/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">text_style_paragraph()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+
+<p>The paragraph text syle, a multi line text box.</p>  </section>
+</section>
+<section class="detail" id="text_style_short/0">
+  <div class="detail-header">
+    <a href="#text_style_short/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">text_style_short()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L40" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+
+<p>The short text style, a single row for text.</p>  </section>
+</section>
+    </div>
+  </section>
+      <footer class="footer">
+
+        <p>
+          Find it on Hex:
+          <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
+          <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
+
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component/input_text.ex">(current file)</a>
+        </p>
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button display-settings">
+            Settings
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>

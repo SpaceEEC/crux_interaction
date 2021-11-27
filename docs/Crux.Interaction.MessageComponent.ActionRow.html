@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
-    <title>Crux.Interaction.ApplicationCommand.Exceptions.InvalidDescription — crux_interaction v0.1.0-dev</title>
+    <title>Crux.Interaction.MessageComponent.ActionRow — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
     <script src="dist/sidebar_items-f5005a1058.js"></script>
       <script src="docs_config.js"></script>
@@ -69,9 +69,9 @@ crux_interaction      </a>
     <div id="content" class="content-inner">
 
 <h1>
-  <span translate="no">Crux.Interaction.ApplicationCommand.Exceptions.InvalidDescription</span> <small>exception</small>
+  <span translate="no">Crux.Interaction.MessageComponent.ActionRow</span> 
   <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
-    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/exceptions.ex#L4" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L1" title="View Source" class="view-source" rel="help">
       <span class="icon-code" aria-hidden="true"></span>
       <span class="sr-only">View Source</span>
     </a>
@@ -79,7 +79,7 @@ crux_interaction      </a>
 
 
   <section id="moduledoc">
-<p>Raised when an invalid description was specified anywhere.<br/>See: <a href="#valid?/1"><code class="inline">valid?/1</code></a></p>  </section>
+<p>An action row is a non-interactive container component for other types of components.</p><p>The allowed components within an action row depends on where its used.</p><p>For action rows the following limitations apply:</p><ul><li>You can have at most <code class="inline">5</code> action rows within a message / interaction.</li><li>Action rows cannot contain action rows.</li><li>Action rows cannot mix components (as of yet).</li></ul><p>You may also want to checkout the <a href="https://discord.com/developers/docs/interactions/message-components#action-rows">Discord Developer Documentation about action rows</a>.</p>  </section>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
@@ -89,35 +89,51 @@ crux_interaction      </a>
       </a>
       Summary
     </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+        </div>
+      </div>
+  </div>
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
     </h2>
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#valid?/1" translate="no">valid?(description)</a>
+          <a href="#add_components/2" translate="no">add_components(action_row, new_component)</a>
         </div>
-          <div class="summary-synopsis"><p>Whether the given description is valid for a chat input or a chat input option.<br/>A description is valid, if it's [1,100] characters long.</p></div>
+          <div class="summary-synopsis"><p>Add one or multiple components to an action row.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#new/1" translate="no">new(component_s \\ [])</a>
+        </div>
+          <div class="summary-synopsis"><p>Create a new action row and optionally initialize it with the given component(s).</p></div>
       </div>
   </div>
   </section>
 
-  <section id="functions" class="details-list">
+  <section id="types" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#functions">
+      <a class="hover-link" href="#types">
         <span class="icon-link" aria-hidden="true"></span>
         <span class="sr-only">Link to this section</span>
       </a>
-Functions    </h1>
-    <div class="functions-list">
-<section class="detail" id="valid?/1">
+Types    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
   <div class="detail-header">
-    <a href="#valid?/1" class="detail-link" title="Link to this function">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
       <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
+      <span class="sr-only">Link to this type</span>
     </a>
-    <h1 class="signature" translate="no">valid?(description)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/exceptions.ex#L45" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">t()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L21" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -127,10 +143,72 @@ Functions    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">valid?(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+          <pre translate="no">t() :: %Crux.Interaction.MessageComponent.ActionRow{
+  components: [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()],
+  type: 1
+}</pre>
       </div>
 
-<p>Whether the given description is valid for a chat input or a chat input option.<br/>A description is valid, if it's [1,100] characters long.</p>  </section>
+  </section>
+</section>
+    </div>
+  </section>
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions    </h1>
+    <div class="functions-list">
+<section class="detail" id="add_components/2">
+  <div class="detail-header">
+    <a href="#add_components/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">add_components(action_row, new_component)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">add_components(<a href="#t:t/0">t</a>(), <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">add_components(<a href="#t:t/0">t</a>(), [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()]) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Add one or multiple components to an action row.</p>  </section>
+</section>
+<section class="detail" id="new/1">
+    <span id="new/0"></span>
+  <div class="detail-header">
+    <a href="#new/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">new(component_s \\ [])</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L31" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">new(
+  <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()
+  | [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()]
+) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Create a new action row and optionally initialize it with the given component(s).</p>  </section>
 </section>
     </div>
   </section>
@@ -141,7 +219,7 @@ Functions    </h1>
           <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
           <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
 
-            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/application_command/exceptions.ex">(current file)</a>
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component/action_row.ex">(current file)</a>
         </p>
         <p>
           <span class="line">
