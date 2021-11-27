@@ -39,7 +39,7 @@ defmodule Crux.Interaction.MixProject do
 
   defp deps() do
     [
-      {:ex_doc, "~> 0.25.1"},
+      {:ex_doc, github: "SpaceEEC/ex_doc", ref: "fix/module_nesting_duplicate"},
       {:jason, ">= 0.0.0", only: :dev}
     ]
   end
@@ -53,11 +53,11 @@ defmodule Crux.Interaction.MixProject do
       markdown_processor: {ExDoc.Markdown.Earmark, [breaks: true]},
       nest_modules_by_prefix: [
         Crux.Interaction.ApplicationCommand,
-        Crux.Interaction.ApplicationCommand.Exceptions
+        Crux.Interaction.ApplicationCommand.Exceptions,
+        Crux.Interaction.MessageComponent
       ],
-      # groups_for_functions: [
-      # ],
-      formatter: "html"
+      formatter: "html",
+      source_ref: "trunk"
     ]
   end
 
