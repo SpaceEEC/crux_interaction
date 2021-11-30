@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.26.0">
+    <meta name="project" content="crux_interaction v0.1.0-dev">
+    <title>Crux.Interaction.Response — crux_interaction v0.1.0-dev</title>
+    <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
+    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="https://github.com/SpaceEEC/crux_interaction/" class="sidebar-projectName" translate="no">
+crux_interaction      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0-dev
+      </strong>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+  <span translate="no">Crux.Interaction.Response</span> 
+  <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L1" title="View Source" class="view-source" rel="help">
+      <span class="icon-code" aria-hidden="true"></span>
+      <span class="sr-only">View Source</span>
+    </a>
+</h1>
+
+
+  <section id="moduledoc">
+<p>Allows you to compose interaction responses.</p><p>First componse the response wanted through the <code class="inline">with_</code> functions, then pass / pipe<br/>the resulting data to the relevant function of the &quot;Response Types&quot; group.</p><p>Notes:</p><ul><li>Multiple calls of the same <code class="inline">with_</code>  function will override the previous set value.</li><li>You can pass <code class="inline">nil</code> to one of the <code class="inline">with_</code> functions to clear a previously set value.</li></ul><h3 id="module-examples" class="section-heading">
+  <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h3>
+<pre><code class="makeup elixir" translate="no"><span class="c1"># Send an ephemeral text response</span><span class="w">
+</span><span class="n">with_content</span><span class="p" data-group-id="4494512844-1">(</span><span class="s">&quot;Hello there&quot;</span><span class="p" data-group-id="4494512844-1">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">with_flags</span><span class="p" data-group-id="4494512844-2">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="4494512844-2">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">channel_message</span><span class="p" data-group-id="4494512844-3">(</span><span class="p" data-group-id="4494512844-3">)</span><span class="w">
+
+</span><span class="c1"># Update a message</span><span class="w">
+</span><span class="n">with_content</span><span class="p" data-group-id="4494512844-4">(</span><span class="s">&quot;Current state: </span><span class="si" data-group-id="4494512844-5">#{</span><span class="n">state</span><span class="si" data-group-id="4494512844-5">}</span><span class="s">&quot;</span><span class="p" data-group-id="4494512844-4">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">update_message</span><span class="p" data-group-id="4494512844-6">(</span><span class="p" data-group-id="4494512844-6">)</span><span class="w">
+
+</span><span class="c1"># Offer choices as response to an autocomplete interaction</span><span class="w">
+</span><span class="n">with_choices</span><span class="p" data-group-id="4494512844-7">(</span><span class="p" data-group-id="4494512844-8">[</span><span class="p" data-group-id="4494512844-9">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;One&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4494512844-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4494512844-10">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4494512844-10">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4494512844-11">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Four&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="4494512844-11">}</span><span class="p" data-group-id="4494512844-8">]</span><span class="p" data-group-id="4494512844-7">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">autocomplete_result</span><span class="p" data-group-id="4494512844-12">(</span><span class="p" data-group-id="4494512844-12">)</span><span class="w">
+
+</span><span class="c1"># Open a modal</span><span class="w">
+</span><span class="c1"># MODALS ARE NOT RELEASED / AVAILABLE YET.</span><span class="w">
+</span><span class="n">with_custom_id</span><span class="p" data-group-id="4494512844-13">(</span><span class="s">&quot;custom_id&quot;</span><span class="p" data-group-id="4494512844-13">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">with_components</span><span class="p" data-group-id="4494512844-14">(</span><span class="w">
+  </span><span class="nc">ActionRow</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4494512844-15">(</span><span class="w">
+    </span><span class="nc">InputText</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4494512844-16">(</span><span class="nc">InputText</span><span class="o">.</span><span class="n">text_style_short</span><span class="p" data-group-id="4494512844-17">(</span><span class="p" data-group-id="4494512844-17">)</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;input_text_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;What is your name?&quot;</span><span class="p" data-group-id="4494512844-16">)</span><span class="w">
+  </span><span class="p" data-group-id="4494512844-15">)</span><span class="w">
+</span><span class="p" data-group-id="4494512844-14">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">modal</span><span class="p" data-group-id="4494512844-18">(</span><span class="p" data-group-id="4494512844-18">)</span><span class="w">
+</span></code></pre>  </section>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:autocomplete_data/0" translate="no">autocomplete_data()</a>
+        </div>
+          <div class="summary-synopsis"><p>Data used to respond to an autocomplete interaction.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:choice/0" translate="no">choice()</a>
+        </div>
+          <div class="summary-synopsis"><p>A choice to be used in <a href="#with_choices/1"><code class="inline">with_choices/1</code></a>,2.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:message_data/0" translate="no">message_data()</a>
+        </div>
+          <div class="summary-synopsis"><p>Used when responding to an interaction with a message.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:modal_data/0" translate="no">modal_data()</a>
+        </div>
+          <div class="summary-synopsis"><p>Used when responding to an interaction with a modal.</p></div>
+      </div>
+  </div>
+  <div class="summary-response-types summary">
+    <h2>
+      <a href="#response-types">Response Types</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#autocomplete_result/1" translate="no">autocomplete_result(data)</a>
+        </div>
+          <div class="summary-synopsis"><p>Generates a response that displays the user choices to chose from.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#channel_message/1" translate="no">channel_message(data)</a>
+        </div>
+          <div class="summary-synopsis"><p>Generates a response that responds to an interaction with a message.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#deferred_channel_message/0" translate="no">deferred_channel_message()</a>
+        </div>
+          <div class="summary-synopsis"><p>Generates a response that acknowledges an interaction and displays a loading state to the user.<br/>A response must be sent later manually.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#deferred_update_message/0" translate="no">deferred_update_message()</a>
+        </div>
+          <div class="summary-synopsis"><p>Generates a response that acknowledges a component interaction and displays <em>no</em> loading state to the user.<br/>An update must be sent later manually.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#modal/1" translate="no">modal(data)</a>
+        </div>
+          <div class="summary-synopsis"><p>Generates a response that displays a modal to the user.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#pong/0" translate="no">pong()</a>
+        </div>
+          <div class="summary-synopsis"><p>Generates a response that acknowledges a ping.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_message/1" translate="no">update_message(data)</a>
+        </div>
+          <div class="summary-synopsis"><p>Generates a response that updates the message the component was attached to.</p></div>
+      </div>
+  </div>
+  <div class="summary-autocomplete summary">
+    <h2>
+      <a href="#autocomplete">Autocomplete</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_choices/2" translate="no">with_choices(data \\ %{}, choices)</a>
+        </div>
+          <div class="summary-synopsis"><p>The choices to provide.</p></div>
+      </div>
+  </div>
+  <div class="summary-modal summary">
+    <h2>
+      <a href="#modal">Modal</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_custom_id/2" translate="no">with_custom_id(data \\ %{}, custom_id)</a>
+        </div>
+          <div class="summary-synopsis"><p>The custom id to use.</p></div>
+      </div>
+  </div>
+  <div class="summary-message summary">
+    <h2>
+      <a href="#message">Message</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_allowed_mentions/2" translate="no">with_allowed_mentions(data \\ %{}, allowed_mentions)</a>
+        </div>
+          <div class="summary-synopsis"><p>Controls what (kind of) mentions to resolve from the content.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_attachments/2" translate="no">with_attachments(data \\ %{}, attachments)</a>
+        </div>
+          <div class="summary-synopsis"><p>The attachments to keep on the message.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_content/2" translate="no">with_content(data \\ %{}, content)</a>
+        </div>
+          <div class="summary-synopsis"><p>The message content to use.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_embeds/2" translate="no">with_embeds(data \\ %{}, embeds)</a>
+        </div>
+          <div class="summary-synopsis"><p>The embeds to use, may be up to 10.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_flags/2" translate="no">with_flags(data \\ %{}, flags)</a>
+        </div>
+          <div class="summary-synopsis"><p>Message flags to use.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_tts/2" translate="no">with_tts(data \\ %{}, tts)</a>
+        </div>
+          <div class="summary-synopsis"><p>Whether the message content should use text-to-speech.</p></div>
+      </div>
+  </div>
+  <div class="summary-multiple summary">
+    <h2>
+      <a href="#multiple">Multiple</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#with_components/2" translate="no">with_components(data \\ %{}, components)</a>
+        </div>
+          <div class="summary-synopsis"><p>The components to use.</p></div>
+      </div>
+  </div>
+  </section>
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types    </h1>
+    <div class="types-list">
+<section class="detail" id="t:autocomplete_data/0">
+  <div class="detail-header">
+    <a href="#t:autocomplete_data/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">autocomplete_data()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L161" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">autocomplete_data() :: %{choices: [<a href="#t:choice/0">choice</a>()]}</pre>
+      </div>
+
+<p>Data used to respond to an autocomplete interaction.</p><p>Limits:</p><ul><li><code class="inline">:choices</code> - Max of 25 in length</li></ul><p>For more information see the <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-autocomplete">Discord Developer Documentation</a>.</p>  </section>
+</section>
+<section class="detail" id="t:choice/0">
+  <div class="detail-header">
+    <a href="#t:choice/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">choice()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">choice() :: %{name: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), value: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()}</pre>
+      </div>
+
+<p>A choice to be used in <a href="#with_choices/1"><code class="inline">with_choices/1</code></a>,2.</p><p>Limits:</p><ul><li><code class="inline">:name</code> - Length must be in <code class="inline">[1,100]</code>.</li><li><code class="inline">:value</code> - If string, length must be in <code class="inline">[1,100]</code>, otherwise for integer and double value must be in <code class="inline">[-2^53,+2^53]</code>.</li></ul><p>For more information see the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-choice-structure">Discord Developer Documentation</a>.</p>  </section>
+</section>
+<section class="detail" id="t:message_data/0">
+  <div class="detail-header">
+    <a href="#t:message_data/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">message_data()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L183" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">message_data() :: %{
+  tts: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>(),
+  content: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  embeds: [Crux.Rest.embed_options()],
+  allowed_mentions: %{
+    parse: [roles_or_users_or_everyone :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()],
+    roles: [Crux.Structs.Snowflake.t()],
+    users: [Crux.Structs.Snowflake.t()]
+  },
+  flags: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  components: [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()],
+  attachments: [%{id: Crux.Structs.Snowflake.t()}]
+}</pre>
+      </div>
+
+<p>Used when responding to an interaction with a message.</p><p>For more information see the <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-messages">Discord Developer Documentation</a>.</p>  </section>
+</section>
+<section class="detail" id="t:modal_data/0">
+  <div class="detail-header">
+    <a href="#t:modal_data/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">modal_data()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">modal_data() :: %{
+  custom_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  components: [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()]
+}</pre>
+      </div>
+
+<p>Used when responding to an interaction with a modal.</p><p><strong>MODALS ARE NOT RELEASED / AVAILABLE YET.</strong></p><p>For more information see the <a href="">Discord Developer Documentation</a>.</p>  </section>
+</section>
+    </div>
+  </section>
+  <section id="response-types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#response-types">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Response Types    </h1>
+    <div class="response-types-list">
+<section class="detail" id="autocomplete_result/1">
+  <div class="detail-header">
+    <a href="#autocomplete_result/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">autocomplete_result(data)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L122" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">autocomplete_result(<a href="#t:message_data/0">message_data</a>() | <a href="#t:modal_data/0">modal_data</a>()) ::
+  Crux.Rest.interaction_response()</pre>
+      </div>
+
+<p>Generates a response that displays the user choices to chose from.</p><blockquote><p>Only valid as a response to auto complete interactions.</p></blockquote>  </section>
+</section>
+<section class="detail" id="channel_message/1">
+  <div class="detail-header">
+    <a href="#channel_message/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">channel_message(data)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">channel_message(<a href="#t:message_data/0">message_data</a>() | <a href="#t:modal_data/0">modal_data</a>()) ::
+  Crux.Rest.interaction_response()</pre>
+      </div>
+
+<p>Generates a response that responds to an interaction with a message.</p><blockquote><p>Not valid for autocomplete interactions.</p></blockquote>  </section>
+</section>
+<section class="detail" id="deferred_channel_message/0">
+  <div class="detail-header">
+    <a href="#deferred_channel_message/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">deferred_channel_message()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">deferred_channel_message() :: Crux.Rest.interaction_response()</pre>
+      </div>
+
+<p>Generates a response that acknowledges an interaction and displays a loading state to the user.<br/>A response must be sent later manually.</p><blockquote><p>Not valid for autocomplete interactions.</p></blockquote>  </section>
+</section>
+<section class="detail" id="deferred_update_message/0">
+  <div class="detail-header">
+    <a href="#deferred_update_message/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">deferred_update_message()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L98" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">deferred_update_message() :: Crux.Rest.interaction_response()</pre>
+      </div>
+
+<p>Generates a response that acknowledges a component interaction and displays <em>no</em> loading state to the user.<br/>An update must be sent later manually.</p><blockquote><p>Only valid as response to component interactions.</p></blockquote>  </section>
+</section>
+<section class="detail" id="modal/1">
+  <div class="detail-header">
+    <a href="#modal/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">modal(data)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L136" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">modal(<a href="#t:modal_data/0">modal_data</a>()) :: Crux.Rest.interaction_response()</pre>
+      </div>
+
+<p>Generates a response that displays a modal to the user.</p><p><strong>MODALS ARE NOT RELEASED / AVAILABLE YET.</strong></p><blockquote><p>Not valid as response to a modal interaction.</p></blockquote>  </section>
+</section>
+<section class="detail" id="pong/0">
+  <div class="detail-header">
+    <a href="#pong/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">pong()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L60" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">pong() :: Crux.Rest.interaction_response()</pre>
+      </div>
+
+<p>Generates a response that acknowledges a ping.</p><blockquote><p>Only valid as response to <code class="inline">Ping</code> interactions.</p></blockquote>  </section>
+</section>
+<section class="detail" id="update_message/1">
+  <div class="detail-header">
+    <a href="#update_message/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_message(data)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">update_message(<a href="#t:message_data/0">message_data</a>()) :: Crux.Rest.interaction_response()</pre>
+      </div>
+
+<p>Generates a response that updates the message the component was attached to.</p><blockquote><p>Only valid as response to component interactions.</p></blockquote>  </section>
+</section>
+    </div>
+  </section>
+  <section id="autocomplete" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#autocomplete">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Autocomplete    </h1>
+    <div class="autocomplete-list">
+<section class="detail" id="with_choices/2">
+    <span id="with_choices/1"></span>
+  <div class="detail-header">
+    <a href="#with_choices/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_choices(data \\ %{}, choices)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L171" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_choices(<a href="#t:autocomplete_data/0">autocomplete_data</a>(), [<a href="#t:choice/0">choice</a>()]) :: <a href="#t:autocomplete_data/0">autocomplete_data</a>()</pre>
+      </div>
+
+<p>The choices to provide.</p>  </section>
+</section>
+    </div>
+  </section>
+  <section id="modal" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#modal">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Modal    </h1>
+    <div class="modal-list">
+<section class="detail" id="with_custom_id/2">
+    <span id="with_custom_id/1"></span>
+  <div class="detail-header">
+    <a href="#with_custom_id/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_custom_id(data \\ %{}, custom_id)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L218" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_custom_id(<a href="#t:modal_data/0">modal_data</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:modal_data/0">modal_data</a>()</pre>
+      </div>
+
+<p>The custom id to use.</p><p><strong>MODALS ARE NOT RELEASED / AVAILABLE YET.</strong></p>  </section>
+</section>
+    </div>
+  </section>
+  <section id="message" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#message">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Message    </h1>
+    <div class="message-list">
+<section class="detail" id="with_allowed_mentions/2">
+    <span id="with_allowed_mentions/1"></span>
+  <div class="detail-header">
+    <a href="#with_allowed_mentions/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_allowed_mentions(data \\ %{}, allowed_mentions)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L278" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_allowed_mentions(
+  <a href="#t:message_data/0">message_data</a>(),
+  allowed_mentions ::
+    %{
+      parse: [roles_or_users_or_everyone :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()],
+      roles: [Crux.Structs.Snowflake.t()],
+      users: [Crux.Structs.Snowflake.t()]
+    }
+    | nil
+) :: <a href="#t:message_data/0">message_data</a>()</pre>
+      </div>
+
+<p>Controls what (kind of) mentions to resolve from the content.</p><p>For more information see the <a href="https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mentions-reference">Discord Developer Documentation</a>.</p>  </section>
+</section>
+<section class="detail" id="with_attachments/2">
+    <span id="with_attachments/1"></span>
+  <div class="detail-header">
+    <a href="#with_attachments/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_attachments(data \\ %{}, attachments)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L308" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_attachments(
+  <a href="#t:message_data/0">message_data</a>(),
+  attachments :: [%{id: Crux.Structs.Snowflake.t()}] | nil
+) :: <a href="#t:message_data/0">message_data</a>()</pre>
+      </div>
+
+<p>The attachments to keep on the message.</p><p>Not setting this means that all attachments will be kept.<br/>An empty list means that all attachments will be removed.</p><blockquote><p>Only relevant when updating a message.</p></blockquote>  </section>
+</section>
+<section class="detail" id="with_content/2">
+    <span id="with_content/1"></span>
+  <div class="detail-header">
+    <a href="#with_content/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_content(data \\ %{}, content)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L242" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_content(<a href="#t:message_data/0">message_data</a>(), content :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil) :: <a href="#t:message_data/0">message_data</a>()</pre>
+      </div>
+
+<p>The message content to use.</p>  </section>
+</section>
+<section class="detail" id="with_embeds/2">
+    <span id="with_embeds/1"></span>
+  <div class="detail-header">
+    <a href="#with_embeds/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_embeds(data \\ %{}, embeds)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_embeds(
+  <a href="#t:message_data/0">message_data</a>(),
+  embeds :: [embed :: Crux.Rest.embed_options()] | nil
+) :: <a href="#t:message_data/0">message_data</a>()</pre>
+      </div>
+
+<p>The embeds to use, may be up to 10.</p>  </section>
+</section>
+<section class="detail" id="with_flags/2">
+    <span id="with_flags/1"></span>
+  <div class="detail-header">
+    <a href="#with_flags/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_flags(data \\ %{}, flags)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L290" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_flags(<a href="#t:message_data/0">message_data</a>(), flags :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil) :: <a href="#t:message_data/0">message_data</a>()</pre>
+      </div>
+
+<p>Message flags to use.</p>  </section>
+</section>
+<section class="detail" id="with_tts/2">
+    <span id="with_tts/1"></span>
+  <div class="detail-header">
+    <a href="#with_tts/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_tts(data \\ %{}, tts)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L230" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_tts(<a href="#t:message_data/0">message_data</a>(), tts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil) :: <a href="#t:message_data/0">message_data</a>()</pre>
+      </div>
+
+<p>Whether the message content should use text-to-speech.</p>  </section>
+</section>
+    </div>
+  </section>
+  <section id="multiple" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#multiple">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Multiple    </h1>
+    <div class="multiple-list">
+<section class="detail" id="with_components/2">
+    <span id="with_components/1"></span>
+  <div class="detail-header">
+    <a href="#with_components/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_components(data \\ %{}, components)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L329" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_components(
+  <a href="#t:message_data/0">message_data</a>(),
+  <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()
+) :: <a href="#t:message_data/0">message_data</a>()</pre>
+          <pre translate="no">with_components(
+  <a href="#t:modal_data/0">modal_data</a>(),
+  <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()
+) :: <a href="#t:modal_data/0">modal_data</a>()</pre>
+      </div>
+
+<p>The components to use.</p><p>Available in modals and messages.</p>  </section>
+</section>
+    </div>
+  </section>
+      <footer class="footer">
+
+        <p>
+          Find it on Hex:
+          <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
+          <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
+
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/response.ex">(current file)</a>
+        </p>
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.26.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire" translate="no">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button display-settings">
+            Settings
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  </body>
+</html>

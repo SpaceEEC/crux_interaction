@@ -8,7 +8,7 @@
     <meta name="project" content="crux_interaction v0.1.0-dev">
     <title>Crux.Interaction.ApplicationCommand.ChatInput — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-f5005a1058.js"></script>
+    <script src="dist/sidebar_items-1063aba2b6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -87,26 +87,26 @@ crux_interaction      </a>
   <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h2>
-<p>A basic ping command:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Ping</span><span class="w"> </span><span class="k" data-group-id="5099364358-1">do</span><span class="w">
+<p>A basic ping command:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Ping</span><span class="w"> </span><span class="k" data-group-id="9287578318-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
 
   </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;ping&quot;</span><span class="w">
   </span><span class="na">@description</span><span class="w"> </span><span class="s">&quot;Pongs right back at you!&quot;</span><span class="w">
-</span><span class="k" data-group-id="5099364358-1">end</span></code></pre><p>A command using choices:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Greet</span><span class="w"> </span><span class="k" data-group-id="5192862367-1">do</span><span class="w">
+</span><span class="k" data-group-id="9287578318-1">end</span></code></pre><p>A command using choices:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Greet</span><span class="w"> </span><span class="k" data-group-id="8766018522-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
 
   </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;greet&quot;</span><span class="w">
   </span><span class="na">@description</span><span class="w"> </span><span class="s">&quot;Greets a user&quot;</span><span class="w">
 
   </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
-  </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The type of the greeting&quot;</span><span class="w"> </span><span class="k" data-group-id="5192862367-2">do</span><span class="w">
+  </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The type of the greeting&quot;</span><span class="w"> </span><span class="k" data-group-id="8766018522-2">do</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;politely&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;politely&quot;</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;casually&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;casually&quot;</span><span class="w">
-  </span><span class="k" data-group-id="5192862367-2">end</span><span class="w">
+  </span><span class="k" data-group-id="8766018522-2">end</span><span class="w">
 
   </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
   </span><span class="n">user</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The user you&#39;d like to greet&quot;</span><span class="w">
-</span><span class="k" data-group-id="5192862367-1">end</span></code></pre><p>A command using sub commands.<br/>Sub command groups can be used to nest one level further:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Info</span><span class="w"> </span><span class="k" data-group-id="6982990499-1">do</span><span class="w">
+</span><span class="k" data-group-id="8766018522-1">end</span></code></pre><p>A command using sub commands.<br/>Sub command groups can be used to nest one level further:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Info</span><span class="w"> </span><span class="k" data-group-id="5071042894-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
   
   </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;info&quot;</span><span class="w">
@@ -114,21 +114,21 @@ crux_interaction      </a>
   </span><span class="c1"># Only specific users / roles can use this command. (Needs to be separately specified per guild)</span><span class="w">
   </span><span class="na">@default_permission</span><span class="w"> </span><span class="no">false</span><span class="w">
 
-  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a user&quot;</span><span class="w"> </span><span class="k" data-group-id="6982990499-2">do</span><span class="w">
+  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a user&quot;</span><span class="w"> </span><span class="k" data-group-id="5071042894-2">do</span><span class="w">
     </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
     </span><span class="n">user</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The user you want to show info about&quot;</span><span class="w">
-  </span><span class="k" data-group-id="6982990499-2">end</span><span class="w">
+  </span><span class="k" data-group-id="5071042894-2">end</span><span class="w">
 
-  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;channel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a channel&quot;</span><span class="w"> </span><span class="k" data-group-id="6982990499-3">do</span><span class="w">
+  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;channel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a channel&quot;</span><span class="w"> </span><span class="k" data-group-id="5071042894-3">do</span><span class="w">
     </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
     </span><span class="n">channel</span><span class="w"> </span><span class="s">&quot;channel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The channel you want to show basic info about&quot;</span><span class="w">
-  </span><span class="k" data-group-id="6982990499-3">end</span><span class="w">
+  </span><span class="k" data-group-id="5071042894-3">end</span><span class="w">
 
-  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a role&quot;</span><span class="w"> </span><span class="k" data-group-id="6982990499-4">do</span><span class="w">
+  </span><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Show basic info about a role&quot;</span><span class="w"> </span><span class="k" data-group-id="5071042894-4">do</span><span class="w">
     </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
     </span><span class="n">role</span><span class="w"> </span><span class="s">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The role you want to show basic info about&quot;</span><span class="w">
-  </span><span class="k" data-group-id="6982990499-4">end</span><span class="w">
-</span><span class="k" data-group-id="6982990499-1">end</span></code></pre><p>A command using autocomplete to dynamically suggest the user options to chose from as they are typing:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Tag</span><span class="w"> </span><span class="k" data-group-id="1076794903-1">do</span><span class="w">
+  </span><span class="k" data-group-id="5071042894-4">end</span><span class="w">
+</span><span class="k" data-group-id="5071042894-1">end</span></code></pre><p>A command using autocomplete to dynamically suggest the user options to chose from as they are typing:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.Tag</span><span class="w"> </span><span class="k" data-group-id="1768115526-1">do</span><span class="w">
   </span><span class="na">@moduledoc</span><span class="w"> </span><span class="no">false</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.ChatInput</span><span class="w">
 
@@ -138,7 +138,7 @@ crux_interaction      </a>
   </span><span class="na">@required</span><span class="w"> </span><span class="no">true</span><span class="w">
   </span><span class="na">@autocomplete</span><span class="w"> </span><span class="no">true</span><span class="w">
   </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The name of the tag&quot;</span><span class="w">
-</span><span class="k" data-group-id="1076794903-1">end</span></code></pre>  </section>
+</span><span class="k" data-group-id="1768115526-1">end</span></code></pre>  </section>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
@@ -286,20 +286,20 @@ Functions    </h1>
 
   <section class="docstring">
 
-<p>Defines choices for <a href="#string/3"><code class="inline">string/3</code></a>, <a href="#integer/3"><code class="inline">integer/3</code></a>, and <a href="#number/3"><code class="inline">number/3</code></a> options.</p><p>Note that this is mutually exclusive with <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="n">string</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="7702378139-1">do</span><span class="w">
+<p>Defines choices for <a href="#string/3"><code class="inline">string/3</code></a>, <a href="#integer/3"><code class="inline">integer/3</code></a>, and <a href="#number/3"><code class="inline">number/3</code></a> options.</p><p>Note that this is mutually exclusive with <code class="inline">@autocomplete true</code>.</p><pre><code class="makeup elixir" translate="no"><span class="n">string</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="0466045418-1">do</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="w">
     </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="w">
-</span><span class="k" data-group-id="7702378139-1">end</span><span class="w">
+</span><span class="k" data-group-id="0466045418-1">end</span><span class="w">
 
-</span><span class="n">integer</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="7702378139-2">do</span><span class="w">
+</span><span class="n">integer</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="0466045418-2">do</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="k" data-group-id="7702378139-2">end</span><span class="w">
+</span><span class="k" data-group-id="0466045418-2">end</span><span class="w">
 
-</span><span class="n">number</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="7702378139-3">do</span><span class="w">
+</span><span class="n">number</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;foos&quot;</span><span class="w"> </span><span class="k" data-group-id="0466045418-3">do</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="n">choice</span><span class="w"> </span><span class="s">&quot;baz&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="w">
-</span><span class="k" data-group-id="7702378139-3">end</span></code></pre>  </section>
+</span><span class="k" data-group-id="0466045418-3">end</span></code></pre>  </section>
 </section>
 <section class="detail" id="integer/3">
     <span id="integer/2"></span>
@@ -422,9 +422,9 @@ Functions    </h1>
 
   <section class="docstring">
 
-<p>Defines a sub command option.</p><pre><code class="makeup elixir" translate="no"><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="9579146339-1">do</span><span class="w">
+<p>Defines a sub command option.</p><pre><code class="makeup elixir" translate="no"><span class="n">subcommand</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="0304460775-1">do</span><span class="w">
   </span><span class="c1"># Optionally further options</span><span class="w">
-</span><span class="k" data-group-id="9579146339-1">end</span></code></pre>  </section>
+</span><span class="k" data-group-id="0304460775-1">end</span></code></pre>  </section>
 </section>
 <section class="detail" id="subcommand_group/3">
   <div class="detail-header">
@@ -443,9 +443,9 @@ Functions    </h1>
 
   <section class="docstring">
 
-<p>Defines a sub command group option.</p><pre><code class="makeup elixir" translate="no"><span class="n">subcommand_group</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="9260326262-1">do</span><span class="w">
+<p>Defines a sub command group option.</p><pre><code class="makeup elixir" translate="no"><span class="n">subcommand_group</span><span class="w"> </span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Creates... something!&quot;</span><span class="w"> </span><span class="k" data-group-id="1272321873-1">do</span><span class="w">
   </span><span class="c1"># Required sub commands</span><span class="w">
-</span><span class="k" data-group-id="9260326262-1">end</span></code></pre>  </section>
+</span><span class="k" data-group-id="1272321873-1">end</span></code></pre>  </section>
 </section>
 <section class="detail" id="user/2">
   <div class="detail-header">

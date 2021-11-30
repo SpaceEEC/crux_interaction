@@ -14,6 +14,7 @@ Crux.Interaction.MessageComponent.InputText.html
 Crux.Interaction.MessageComponent.SelectMenu.Option.html
 Crux.Interaction.MessageComponent.SelectMenu.html
 Crux.Interaction.MessageComponent.html
+Crux.Interaction.Response.html
 api-reference.html
 dist/app-845bc49c8159f61ff61d.js
 dist/elixir-4a33a99d0bf2560a814f.css
@@ -21,7 +22,7 @@ dist/html/fonts/icomoon.eot
 dist/html/fonts/icomoon.svg
 dist/html/fonts/icomoon.ttf
 dist/html/fonts/icomoon.woff
-dist/search_items-2634e73997.js
-dist/sidebar_items-f5005a1058.js
+dist/search_items-b6c5122098.js
+dist/sidebar_items-1063aba2b6.js
 index.html
 search.html
