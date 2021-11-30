@@ -56,6 +56,18 @@ defmodule Crux.Interaction.MixProject do
         Crux.Interaction.ApplicationCommand.Exceptions,
         Crux.Interaction.MessageComponent
       ],
+      groups_for_modules: [
+        Response: [
+          Crux.Interaction.Response
+        ],
+      ],
+      groups_for_functions: [
+        "Response Types": & &1[:section] == :response,
+        Autocomplete: & &1[:section] == :autocomplete,
+        Modal: & &1[:section] == :modal,
+        Message: & &1[:section] == :message,
+        Multiple: & &1[:section] == :multiple
+      ],
       formatter: "html",
       source_ref: "trunk"
     ]
