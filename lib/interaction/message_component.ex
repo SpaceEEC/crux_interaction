@@ -1,7 +1,7 @@
 defmodule Crux.Interaction.MessageComponent do
   @moduledoc """
   Message components are interactive elements that may be added to messages or be sent as part of a response to an interaction.
-  
+
   There are the following message components:
   - `Crux.Interaction.MessageComponent.ActionRow`
   - `Crux.Interaction.MessageComponent.Button`
