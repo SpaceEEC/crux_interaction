@@ -19,6 +19,8 @@ defmodule Crux.Interaction.Component.InputText do
     :placeholder,
     :min_length,
     :max_length,
+    :required,
+    :value,
     type: 4
   ]
 
@@ -94,5 +96,25 @@ defmodule Crux.Interaction.Component.InputText do
   def put_max_length(%__MODULE__{} = input_text, max_length)
       when is_integer(max_length) and max_length >= 1 do
     %__MODULE__{input_text | max_length: max_length}
+  end
+
+  @doc """
+  Set whether the field may be submitted empty.
+  """
+  @doc since: "0.1.0"
+  @spec put_required(t(), boolean()) :: t()
+  def put_required(%__MODULE__{} = input_text, required)
+      when is_boolean(required) do
+    %__MODULE__{input_text | required: required}
+  end
+
+  @doc """
+  Specify a value to be already prefilled into the field.
+  """
+  @doc since: "0.1.0"
+  @spec put_value(t(), String.t()) :: t()
+  def put_value(%__MODULE__{} = input_text, value)
+      when is_binary(value) do
+    %__MODULE__{input_text | value: value}
   end
 end

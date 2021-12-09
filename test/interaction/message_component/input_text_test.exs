@@ -60,4 +60,40 @@ defmodule Crux.Interaction.Component.InputTextTest do
       end
     end
   end
+
+  describe "put_required/2" do
+    test "valid boolean works" do
+      %InputText{type: 4, style: 1, custom_id: "custom_id", label: "label", required: false} =
+        @input_text
+        |> InputText.put_required(false)
+    end
+
+    test "invalid value raise" do
+      assert_raise FunctionClauseError, fn ->
+        @input_text
+        |> InputText.put_required(%{})
+      end
+    end
+  end
+
+  describe "put_value/2" do
+    test "valid string works" do
+      %InputText{
+        type: 4,
+        style: 1,
+        custom_id: "custom_id",
+        label: "label",
+        value: "Once upon a time..."
+      } =
+        @input_text
+        |> InputText.put_value("Once upon a time...")
+    end
+
+    test "invalid value raise" do
+      assert_raise FunctionClauseError, fn ->
+        @input_text
+        |> InputText.put_value(false)
+      end
+    end
+  end
 end
