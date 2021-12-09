@@ -1,6 +1,6 @@
-defmodule Crux.Interaction.MessageComponent.SelectMenuTest do
+defmodule Crux.Interaction.Component.SelectMenuTest do
   use ExUnit.Case, async: true
-  alias Crux.Interaction.MessageComponent.SelectMenu
+  alias Crux.Interaction.Component.SelectMenu
   doctest SelectMenu
 
   describe "new" do

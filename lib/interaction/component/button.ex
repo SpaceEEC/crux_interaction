@@ -1,4 +1,4 @@
-defmodule Crux.Interaction.MessageComponent.Button do
+defmodule Crux.Interaction.Component.Button do
   @moduledoc """
   Buttons are interactive components.
 

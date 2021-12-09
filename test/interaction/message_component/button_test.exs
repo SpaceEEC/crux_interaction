@@ -1,6 +1,6 @@
-defmodule Crux.Interaction.MessageComponent.ButtonTest do
+defmodule Crux.Interaction.Component.ButtonTest do
   use ExUnit.Case, async: true
-  alias Crux.Interaction.MessageComponent.Button
+  alias Crux.Interaction.Component.Button
   doctest Button
 
   describe "button_style" do

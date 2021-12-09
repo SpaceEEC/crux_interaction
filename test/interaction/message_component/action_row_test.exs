@@ -1,6 +1,6 @@
-defmodule Crux.Interaction.MessageComponent.ActionRowTest do
+defmodule Crux.Interaction.Component.ActionRowTest do
   use ExUnit.Case, async: true
-  alias Crux.Interaction.MessageComponent.ActionRow
+  alias Crux.Interaction.Component.ActionRow
   doctest ActionRow
 
   describe "new" do

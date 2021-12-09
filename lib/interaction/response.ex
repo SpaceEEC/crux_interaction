@@ -190,7 +190,7 @@ defmodule Crux.Interaction.Response do
             users: [Crux.Structs.Snowflake.t()]
           },
           flags: non_neg_integer(),
-          components: [Crux.Interaction.MessageComponent.t() | Crux.Rest.component()],
+          components: [Crux.Interaction.Component.t() | Crux.Rest.component()],
           attachments: [%{id: Crux.Structs.Snowflake.t()}]
         }
 
@@ -204,7 +204,7 @@ defmodule Crux.Interaction.Response do
   @typedoc since: "0.1.0"
   @type modal_data :: %{
           custom_id: String.t(),
-          components: [Crux.Interaction.MessageComponent.t() | Crux.Rest.component()]
+          components: [Crux.Interaction.Component.t() | Crux.Rest.component()]
         }
 
   @doc """
@@ -320,11 +320,11 @@ defmodule Crux.Interaction.Response do
   @doc section: :multiple
   @spec with_components(
           message_data(),
-          Crux.Interaction.MessageComponent.t() | Crux.Rest.component()
+          Crux.Interaction.Component.t() | Crux.Rest.component()
         ) :: message_data()
   @spec with_components(
           modal_data(),
-          Crux.Interaction.MessageComponent.t() | Crux.Rest.component()
+          Crux.Interaction.Component.t() | Crux.Rest.component()
         ) :: modal_data()
   def with_components(data \\ %{}, components)
       when is_nil(components)

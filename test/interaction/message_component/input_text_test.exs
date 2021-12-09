@@ -1,6 +1,6 @@
-defmodule Crux.Interaction.MessageComponent.InputTextTest do
+defmodule Crux.Interaction.Component.InputTextTest do
   use ExUnit.Case, async: true
-  alias Crux.Interaction.MessageComponent.InputText
+  alias Crux.Interaction.Component.InputText
   doctest InputText
 
   describe "text_style" do

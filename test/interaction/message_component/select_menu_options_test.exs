@@ -1,6 +1,6 @@
-defmodule Crux.Interaction.MessageComponent.SelectMenu.OptionTest do
+defmodule Crux.Interaction.Component.SelectMenu.OptionTest do
   use ExUnit.Case, async: true
-  alias Crux.Interaction.MessageComponent.SelectMenu.Option
+  alias Crux.Interaction.Component.SelectMenu.Option
   doctest Option
 
   describe "new/2" do

@@ -54,7 +54,7 @@ defmodule Crux.Interaction.MixProject do
       nest_modules_by_prefix: [
         Crux.Interaction.ApplicationCommand,
         Crux.Interaction.ApplicationCommand.Exceptions,
-        Crux.Interaction.MessageComponent
+        Crux.Interaction.Component,
       ],
       groups_for_modules: [
         Response: [
@@ -62,11 +62,11 @@ defmodule Crux.Interaction.MixProject do
         ],
       ],
       groups_for_functions: [
-        "Response Types": & &1[:section] == :response,
-        Autocomplete: & &1[:section] == :autocomplete,
-        Modal: & &1[:section] == :modal,
-        Message: & &1[:section] == :message,
-        Multiple: & &1[:section] == :multiple
+        "Response Types": &(&1[:section] == :response),
+        Autocomplete: &(&1[:section] == :autocomplete),
+        Modal: &(&1[:section] == :modal),
+        Message: &(&1[:section] == :message),
+        Multiple: &(&1[:section] == :multiple)
       ],
       formatter: "html",
       source_ref: "trunk"

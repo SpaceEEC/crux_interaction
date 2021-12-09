@@ -1,4 +1,4 @@
-defmodule Crux.Interaction.MessageComponent.InputText do
+defmodule Crux.Interaction.Component.InputText do
   @moduledoc """
   # THIS IS NOT RELEASED / AVAILABLE YET.
   # EVERYTHING IS SUBJECT TO CHANGE.

@@ -1,4 +1,4 @@
-defmodule Crux.Interaction.MessageComponent.ActionRow do
+defmodule Crux.Interaction.Component.ActionRow do
   @moduledoc """
   An action row is a non-interactive container component for other types of components.
 
@@ -13,21 +13,21 @@ defmodule Crux.Interaction.MessageComponent.ActionRow do
   """
   @moduledoc since: "0.1.0"
 
-  alias Crux.Interaction.MessageComponent
+  alias Crux.Interaction.Component
 
   defstruct type: 1, components: []
 
   @typedoc since: "0.1.0"
   @type t :: %__MODULE__{
           type: 1,
-          components: [MessageComponent.t()]
+          components: [Component.t()]
         }
 
   @doc """
   Create a new action row and optionally initialize it with the given component(s).
   """
   @doc since: "0.1.0"
-  @spec new(MessageComponent.t() | [MessageComponent.t()]) :: t()
+  @spec new(Component.t() | [Component.t()]) :: t()
   def new(component_s \\ [])
 
   def new(%{} = component) do
@@ -42,12 +42,12 @@ defmodule Crux.Interaction.MessageComponent.ActionRow do
   Add one or multiple components to an action row.
   """
   @doc since: "0.1.0"
-  @spec add_components(t(), MessageComponent.t()) :: t()
+  @spec add_components(t(), Component.t()) :: t()
   def add_components(%__MODULE__{} = action_row, %{} = new_component) do
     add_components(action_row, [new_component])
   end
 
-  @spec add_components(t(), [MessageComponent.t()]) :: t()
+  @spec add_components(t(), [Component.t()]) :: t()
   def add_components(%__MODULE__{components: components} = action_row, new_components)
       when is_list(new_components) do
     %__MODULE__{action_row | components: components ++ new_components}

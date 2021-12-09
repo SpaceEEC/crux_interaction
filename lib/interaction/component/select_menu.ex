@@ -1,4 +1,4 @@
-defmodule Crux.Interaction.MessageComponent.SelectMenu do
+defmodule Crux.Interaction.Component.SelectMenu do
   @moduledoc """
   Select menus are another interactive component that renders on messages.
 
