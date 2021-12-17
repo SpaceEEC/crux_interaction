@@ -191,6 +191,7 @@ defmodule Crux.Interaction.Response do
           },
           flags: non_neg_integer(),
           components: [Crux.Interaction.Component.t() | Crux.Rest.component()],
+          files: [Crux.Rest.file_options()],
           attachments: [%{id: Crux.Structs.Snowflake.t()}]
         }
 
@@ -294,9 +295,24 @@ defmodule Crux.Interaction.Response do
   end
 
   @doc """
+  The files to use.
+  """
+  @doc since: "0.1.0"
+  @doc section: :message
+  @spec with_files(message_data(), files :: [Crux.Rest.file_options()] | nil) :: message_data()
+  def with_files(data \\ %{}, files)
+      when is_nil(files)
+      when is_list(files) do
+    # Empty list -> no files -> no key in map
+    files = if(files == [], do: nil, else: files)
+
+    _put(data, :files, files)
+  end
+
+  @doc """
   The attachments to keep on the message.
 
-  Not setting this means that all attachments will be kept.
+  Not setting / clearing this means that all attachments will be kept.
   An empty list means that all attachments will be removed.
 
   > Only relevant when updating a message.
@@ -332,6 +348,7 @@ defmodule Crux.Interaction.Response do
     _put(data, :components, components)
   end
 
+  @doc since: "0.1.0"
   defp _put(data, key, nil) do
     Map.delete(data, key)
   end
