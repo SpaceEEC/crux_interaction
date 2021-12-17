@@ -27,6 +27,14 @@ defmodule Crux.Interaction.ApplicationCommand.Exceptions do
       %__MODULE__{message: message}
     end
 
+    def exception(nil) do
+      message = """
+      Invalid application command chat inputs must have a @description.\
+      """
+
+      %__MODULE__{message: message}
+    end
+
     def exception(description) do
       message = """
       Invalid application command chat input description, must be [1,100] characters long.

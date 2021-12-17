@@ -451,7 +451,7 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInput do
       end
 
       unless InvalidDescription.valid?(description) do
-        raise InvalidDescription, name
+        raise InvalidDescription, description
       end
 
       unless InvalidDefaultPermission.valid?(default_permission) do

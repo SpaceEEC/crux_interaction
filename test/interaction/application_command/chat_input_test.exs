@@ -166,6 +166,20 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
       end
     end
 
+    test "missing command description" do
+      assert_raise Exceptions.InvalidDescription, ~r/Invalid application command chat inputs must have a @description./, fn ->
+        Code.eval_quoted(
+          quote do
+            defmodule TestModule do
+              use ChatInput
+
+              @name "name"
+            end
+          end
+        )
+      end
+    end
+
     test "invalid option name" do
       assert_raise Exceptions.InvalidName, ~r/chat input option name/, fn ->
         Code.eval_quoted(
