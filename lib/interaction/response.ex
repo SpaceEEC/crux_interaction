@@ -118,7 +118,7 @@ defmodule Crux.Interaction.Response do
   """
   @doc since: "0.1.0"
   @doc section: :response
-  @spec autocomplete_result(message_data() | modal_data()) :: Crux.Rest.interaction_response()
+  @spec autocomplete_result(autocomplete_data()) :: Crux.Rest.interaction_response()
   def autocomplete_result(data) do
     %{type: @autocomplete_result, data: data}
   end
