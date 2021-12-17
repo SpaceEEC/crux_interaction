@@ -5,15 +5,8 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
   alias Crux.Interaction.ApplicationCommand.Exceptions
   alias Crux.Interaction.ApplicationCommand.ChatInput
 
-  @compile {:no_warn_undefined, MyBot.Ping}
-  @compile {:no_warn_undefined, MyBot.Greet}
-  @compile {:no_warn_undefined, MyBot.Info}
-  @compile {:no_warn_undefined, MyBot.Tag}
-
   describe "the moduledoc examples work" do
     test "ping" do
-      Code.compile_file("test/interaction/application_command/chat_input/ping.ex")
-
       data = MyBot.Ping.__crux_command__()
 
       assert %{
@@ -24,8 +17,6 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
     end
 
     test "greet" do
-      Code.compile_file("test/interaction/application_command/chat_input/greet.ex")
-
       data = MyBot.Greet.__crux_command__()
 
       assert %{
@@ -60,8 +51,6 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
     end
 
     test "info" do
-      Code.compile_file("test/interaction/application_command/chat_input/info.ex")
-
       data = MyBot.Info.__crux_command__()
 
       assert %{
@@ -114,8 +103,6 @@ defmodule Crux.Interaction.ApplicationCommand.ChatInputTest do
     end
 
     test "tag" do
-      Code.compile_file("test/interaction/application_command/chat_input/tag.ex")
-
       data = MyBot.Tag.__crux_command__()
 
       assert %{
