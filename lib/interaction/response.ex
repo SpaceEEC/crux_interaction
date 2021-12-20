@@ -310,12 +310,10 @@ defmodule Crux.Interaction.Response do
   end
 
   @doc """
-  The attachments to keep on the message.
+  What attachments to keep when editing a message.
 
   Not setting / clearing this means that all attachments will be kept.
   An empty list means that all attachments will be removed.
-
-  > Only relevant when updating a message.
   """
   @doc since: "0.1.0"
   @doc section: :message
@@ -328,9 +326,7 @@ defmodule Crux.Interaction.Response do
   end
 
   @doc """
-  The components to use.
-
-  Available in modals and messages.
+  Components to use in a modal or message.
   """
   @doc since: "0.1.0"
   @doc section: :multiple
