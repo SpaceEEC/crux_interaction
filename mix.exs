@@ -34,13 +34,20 @@ defmodule Crux.Interaction.MixProject do
   end
 
   def application() do
-    [extra_applications: [:logger]]
+    [extra_applications: [:logger], mod: {Crux.Interaction.Bpplication, []}]
   end
 
   defp deps() do
     [
-      {:ex_doc, github: "SpaceEEC/ex_doc", ref: "fix/module_nesting_duplicate"},
-      {:jason, ">= 0.0.0", only: :dev}
+      # Optional
+      {:plug, ">= 0.0.0", optional: true},
+      {:crux_crypto, github: "SpaceEEC/crux_crypto", optional: true},
+      {:mimerl, "~> 1.2.0", optional: true},
+      {:hackney, "~> 1.18.0", optional: true},
+      # Dev
+      {:jason, ">= 0.0.0", only: :dev, runtime: false},
+      {:ex_doc,
+       github: "SpaceEEC/ex_doc", ref: "fix/module_nesting_duplicate", only: :dev, runtime: false}
     ]
   end
 
@@ -50,23 +57,31 @@ defmodule Crux.Interaction.MixProject do
 
   defp docs() do
     [
-      markdown_processor: {ExDoc.Markdown.Earmark, [breaks: true]},
       nest_modules_by_prefix: [
         Crux.Interaction.ApplicationCommand,
         Crux.Interaction.ApplicationCommand.Exceptions,
         Crux.Interaction.Component,
+        Crux.Interaction.Plug,
+        Crux.Interaction.Response
       ],
       groups_for_modules: [
-        Response: [
-          Crux.Interaction.Response
+        Util: [
+          Crux.Interaction.Util,
+          Crux.Interaction.Response,
+          Crux.Interaction.Executor
         ],
+        Plug: [
+          Crux.Interaction.Plug,
+          Crux.Interaction.Plug.CacheBodyReader,
+          Crux.Interaction.Plug.VerifyHeader
+        ]
       ],
       groups_for_functions: [
-        "Response Types": &(&1[:section] == :response),
-        Autocomplete: &(&1[:section] == :autocomplete),
-        Modal: &(&1[:section] == :modal),
-        Message: &(&1[:section] == :message),
-        Multiple: &(&1[:section] == :multiple)
+        "Response Wrappers": &(&1[:section] == :response),
+        "Autocomplete Data": &(&1[:section] == :autocomplete),
+        "Modal Data": &(&1[:section] == :modal),
+        "Message Data": &(&1[:section] == :message),
+        "Shared Data": &(&1[:section] == :multiple)
       ],
       formatter: "html",
       source_ref: "trunk"
