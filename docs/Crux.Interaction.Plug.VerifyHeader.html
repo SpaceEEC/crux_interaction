@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
-    <title>Crux.Interaction.ApplicationCommand.User — crux_interaction v0.1.0-dev</title>
+    <title>Crux.Interaction.Plug.VerifyHeader — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
     <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
@@ -69,9 +69,9 @@ crux_interaction      </a>
     <div id="content" class="content-inner">
 
 <h1>
-  <span translate="no">Crux.Interaction.ApplicationCommand.User</span> 
+  <span translate="no">Crux.Interaction.Plug.VerifyHeader</span> 
   <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
-    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/user.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/plug/verify_header.ex#L2" title="View Source" class="view-source" rel="help">
       <span class="icon-code" aria-hidden="true"></span>
       <span class="sr-only">View Source</span>
     </a>
@@ -79,16 +79,20 @@ crux_interaction      </a>
 
 
   <section id="moduledoc">
-<p>Provides a DSL to define user application commands A.K.A. context menus.</p><p>Names may have spaces and can be up to 32 characters long.</p><p>It's recommend to checkout the <a href="https://discord.com/developers/docs/interactions/application-commands#user-commands">Discord Developer Documentation on User Commands</a>.</p><h2 id="module-examples" class="section-heading">
+<p>Verifies the <code class="inline">x-signature-ed25519</code> and <code class="inline">x-signature-timestamp</code> headers Discord sends
+along every payload to ensure that only requests that are coming from Discord are processed.</p><p>If verification fails, this plug logs a warn and responds with <code class="inline">401</code>.
+Note that Discord automatically tests your endpoint using invalid headers to ensure this check is working.</p><p>If the http verb is not <code class="inline">POST</code>, this plug acts as a noop.</p><h3 id="module-examples" class="section-heading">
   <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
-</h2>
-<pre><code class="makeup elixir" translate="no"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyBot.BlockUser</span><span class="w"> </span><span class="k" data-group-id="1069152194-1">do</span><span class="w">
-    </span><span class="kn">use</span><span class="w"> </span><span class="nc">Crux.Interaction.ApplicationCommand.User</span><span class="w">
+</h3>
+<pre><code class="makeup elixir" translate="no"><span class="n">plug</span><span class="w"> </span><span class="nc">Crux.Interaction.Plug.VerifyHeader</span><span class="p">,</span><span class="w"> </span><span class="ss">public_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;some-public-key&quot;</span><span class="w">
 
-    </span><span class="na">@name</span><span class="w"> </span><span class="s">&quot;Block this User&quot;</span><span class="w">
-    </span><span class="c1"># User commands can&#39;t have a @description</span><span class="w">
-</span><span class="k" data-group-id="1069152194-1">end</span></code></pre>  </section>
+</span><span class="c1"># For runtime configuration</span><span class="w">
+</span><span class="n">plug</span><span class="w"> </span><span class="nc">Crux.Interaction.Plug.VerifyHeader</span><span class="p">,</span><span class="w"> </span><span class="ss">public_key</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0619151295-1">{</span><span class="bp">__MODULE__</span><span class="p">,</span><span class="w"> </span><span class="ss">:fetch_public_key!</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0619151295-2">[</span><span class="p" data-group-id="0619151295-2">]</span><span class="p" data-group-id="0619151295-1">}</span></code></pre><blockquote><p>Make sure you properly configured <a href="Crux.Interaction.Plug.CacheBodyReader.html"><code class="inline">Crux.Interaction.Plug.CacheBodyReader</code></a>, otherwise an error will be raised.</p></blockquote><blockquote><p>In order to use this plug, you need to add <code class="inline">plug</code> and <a href="https://github.com/spaceeec/crux_crypto"><code class="inline">crux_crypto</code></a> to your dependencies.</p></blockquote><h3 id="module-errors" class="section-heading">
+  <a href="#module-errors" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Errors
+</h3>
+<p>There currently are the following errors (for the sake of documenting them):</p><ul><li><code class="inline">:missing_timestamp</code> - When the <code class="inline">x-signature-timestamp</code> header is missing</li><li><code class="inline">:missing_signature</code> - When the <code class="inline">x-signature-ed25519</code> header is missing</li><li><code class="inline">:malformed_signature</code> - When the signature couldn't be decoded</li><li><code class="inline">:mismatching_signature</code> - When the signature was invalid</li></ul>  </section>
 
 
       <footer class="footer">
@@ -98,7 +102,7 @@ crux_interaction      </a>
           <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
           <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
 
-            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/application_command/user.ex">(current file)</a>
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/plug/verify_header.ex">(current file)</a>
         </p>
         <p>
           <span class="line">

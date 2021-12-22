@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
-    <title>Crux.Interaction.MessageComponent.ActionRow — crux_interaction v0.1.0-dev</title>
+    <title>Crux.Interaction.Component.ActionRow — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -69,9 +69,9 @@ crux_interaction      </a>
     <div id="content" class="content-inner">
 
 <h1>
-  <span translate="no">Crux.Interaction.MessageComponent.ActionRow</span> 
+  <span translate="no">Crux.Interaction.Component.ActionRow</span> 
   <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
-    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/action_row.ex#L1" title="View Source" class="view-source" rel="help">
       <span class="icon-code" aria-hidden="true"></span>
       <span class="sr-only">View Source</span>
     </a>
@@ -133,7 +133,7 @@ Types    </h1>
       <span class="sr-only">Link to this type</span>
     </a>
     <h1 class="signature" translate="no">t()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L21" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/action_row.ex#L21" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -143,8 +143,8 @@ Types    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">t() :: %Crux.Interaction.MessageComponent.ActionRow{
-  components: [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()],
+          <pre translate="no">t() :: %Crux.Interaction.Component.ActionRow{
+  components: [<a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>()],
   type: 1
 }</pre>
       </div>
@@ -168,7 +168,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">add_components(action_row, new_component)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L46" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/action_row.ex#L46" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -178,8 +178,8 @@ Functions    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">add_components(<a href="#t:t/0">t</a>(), <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
-          <pre translate="no">add_components(<a href="#t:t/0">t</a>(), [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()]) :: <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">add_components(<a href="#t:t/0">t</a>(), <a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">add_components(<a href="#t:t/0">t</a>(), [<a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>()]) :: <a href="#t:t/0">t</a>()</pre>
       </div>
 
 <p>Add one or multiple components to an action row.</p>  </section>
@@ -192,7 +192,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">new(component_s \\ [])</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/action_row.ex#L31" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/action_row.ex#L31" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -202,10 +202,7 @@ Functions    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">new(
-  <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()
-  | [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>()]
-) :: <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">new(<a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>() | [<a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>()]) :: <a href="#t:t/0">t</a>()</pre>
       </div>
 
 <p>Create a new action row and optionally initialize it with the given component(s).</p>  </section>
@@ -219,7 +216,7 @@ Functions    </h1>
           <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
           <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
 
-            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component/action_row.ex">(current file)</a>
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/component/action_row.ex">(current file)</a>
         </p>
         <p>
           <span class="line">

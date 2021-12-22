@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
-    <title>Crux.Interaction.MessageComponent — crux_interaction v0.1.0-dev</title>
+    <title>Crux.Interaction.Plug.CacheBodyReader — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -69,9 +69,9 @@ crux_interaction      </a>
     <div id="content" class="content-inner">
 
 <h1>
-  <span translate="no">Crux.Interaction.MessageComponent</span> 
+  <span translate="no">Crux.Interaction.Plug.CacheBodyReader</span> 
   <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
-    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/plug/cache_body_reader.ex#L2" title="View Source" class="view-source" rel="help">
       <span class="icon-code" aria-hidden="true"></span>
       <span class="sr-only">View Source</span>
     </a>
@@ -79,7 +79,12 @@ crux_interaction      </a>
 
 
   <section id="moduledoc">
-<p>Message components are interactive elements that may be added to messages or be sent as part of a response to an interaction.</p><p>There are the following message components:</p><ul><li><a href="Crux.Interaction.MessageComponent.ActionRow.html"><code class="inline">Crux.Interaction.MessageComponent.ActionRow</code></a></li><li><a href="Crux.Interaction.MessageComponent.Button.html"><code class="inline">Crux.Interaction.MessageComponent.Button</code></a></li><li><a href="Crux.Interaction.MessageComponent.InputText.html"><code class="inline">Crux.Interaction.MessageComponent.InputText</code></a></li><li><a href="Crux.Interaction.MessageComponent.SelectMenu.html"><code class="inline">Crux.Interaction.MessageComponent.SelectMenu</code></a></li></ul>  </section>
+<p>To be plugged into <a href="https://hexdocs.pm/plug/1.12.1/Plug.Parsers.html"><code class="inline">Plug.Parsers</code></a> as a <code class="inline">body_reader</code>.</p><pre><code class="makeup elixir" translate="no"><span class="n">plug</span><span class="w"> </span><span class="nc">Plug.Parser</span><span class="p">,</span><span class="w">
+  </span><span class="c1"># ...</span><span class="w">
+  </span><span class="ss">body_reader</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0342146117-1">{</span><span class="nc">Crux.Interaction.Plug.CacheBodyReader</span><span class="p">,</span><span class="w"> </span><span class="ss">:read_body</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0342146117-2">[</span><span class="p" data-group-id="0342146117-2">]</span><span class="p" data-group-id="0342146117-1">}</span><span class="p">,</span><span class="w">
+  </span><span class="c1"># ...</span><span class="w">
+</span></code></pre><p>Caching the raw body prior to parsing it is necessary to be able to
+validate Discord's signature via <a href="Crux.Interaction.Plug.VerifyHeader.html"><code class="inline">Crux.Interaction.Plug.VerifyHeader</code></a>.</p><p>The raw body will then be placed into <code class="inline">conn.private[:raw_body]</code>.</p><blockquote><p>Taken from <a href="https://hexdocs.pm/plug/Plug.Parsers.html#module-custom-body-reader">https://hexdocs.pm/plug/Plug.Parsers.html#module-custom-body-reader</a> and modified a bit</p></blockquote><blockquote><p>In order to use this module, you need to add <code class="inline">plug</code> to your dependencies.</p></blockquote>  </section>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
@@ -89,34 +94,35 @@ crux_interaction      </a>
       </a>
       Summary
     </h1>
-  <div class="summary-types summary">
+  <div class="summary-functions summary">
     <h2>
-      <a href="#types">Types</a>
+      <a href="#functions">Functions</a>
     </h2>
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#t:t/0" translate="no">t()</a>
+          <a href="#read_cached_body/1" translate="no">read_cached_body(conn)</a>
         </div>
+          <div class="summary-synopsis"><p>Get the cached body, returns <code class="inline">nil</code> if no body was read.</p></div>
       </div>
   </div>
   </section>
 
-  <section id="types" class="details-list">
+  <section id="functions" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#types">
+      <a class="hover-link" href="#functions">
         <span class="icon-link" aria-hidden="true"></span>
         <span class="sr-only">Link to this section</span>
       </a>
-Types    </h1>
-    <div class="types-list">
-<section class="detail" id="t:t/0">
+Functions    </h1>
+    <div class="functions-list">
+<section class="detail" id="read_cached_body/1">
   <div class="detail-header">
-    <a href="#t:t/0" class="detail-link" title="Link to this type">
+    <a href="#read_cached_body/1" class="detail-link" title="Link to this function">
       <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this type</span>
+      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">t()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component.ex#L22" class="view-source" rel="help" title="View Source">
+    <h1 class="signature" translate="no">read_cached_body(conn)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/plug/cache_body_reader.ex#L54" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -126,14 +132,10 @@ Types    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">t() ::
-  <a href="Crux.Interaction.MessageComponent.ActionRow.html#t:t/0">Crux.Interaction.MessageComponent.ActionRow.t</a>()
-  | <a href="Crux.Interaction.MessageComponent.Button.html#t:t/0">Crux.Interaction.MessageComponent.Button.t</a>()
-  | <a href="Crux.Interaction.MessageComponent.InputText.html#t:t/0">Crux.Interaction.MessageComponent.InputText.t</a>()
-  | <a href="Crux.Interaction.MessageComponent.SelectMenu.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.t</a>()</pre>
+          <pre translate="no">read_cached_body(<a href="https://hexdocs.pm/plug/1.12.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()) :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil</pre>
       </div>
 
-  </section>
+<p>Get the cached body, returns <code class="inline">nil</code> if no body was read.</p>  </section>
 </section>
     </div>
   </section>
@@ -144,7 +146,7 @@ Types    </h1>
           <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
           <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
 
-            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component.ex">(current file)</a>
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/plug/cache_body_reader.ex">(current file)</a>
         </p>
         <p>
           <span class="line">

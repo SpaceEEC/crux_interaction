@@ -8,7 +8,7 @@
     <meta name="project" content="crux_interaction v0.1.0-dev">
     <title>Crux.Interaction.Response — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -79,32 +79,33 @@ crux_interaction      </a>
 
 
   <section id="moduledoc">
-<p>Allows you to compose interaction responses.</p><p>First componse the response wanted through the <code class="inline">with_</code> functions, then pass / pipe<br/>the resulting data to the relevant function of the &quot;Response Types&quot; group.</p><p>Notes:</p><ul><li>Multiple calls of the same <code class="inline">with_</code>  function will override the previous set value.</li><li>You can pass <code class="inline">nil</code> to one of the <code class="inline">with_</code> functions to clear a previously set value.</li></ul><h3 id="module-examples" class="section-heading">
+<p>Allows you to compose interaction responses.</p><p>First componse the response wanted through the <code class="inline">with_</code> functions, then pass / pipe
+the resulting data to the relevant function of the &quot;Response Types&quot; group.</p><p>Notes:</p><ul><li>Multiple calls of the same <code class="inline">with_</code>  function will override the previous set value.</li><li>You can pass <code class="inline">nil</code> to one of the <code class="inline">with_</code> functions to clear a previously set value.</li></ul><h3 id="module-examples" class="section-heading">
   <a href="#module-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Examples
 </h3>
 <pre><code class="makeup elixir" translate="no"><span class="c1"># Send an ephemeral text response</span><span class="w">
-</span><span class="n">with_content</span><span class="p" data-group-id="4494512844-1">(</span><span class="s">&quot;Hello there&quot;</span><span class="p" data-group-id="4494512844-1">)</span><span class="w">
-</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">with_flags</span><span class="p" data-group-id="4494512844-2">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="4494512844-2">)</span><span class="w">
-</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">channel_message</span><span class="p" data-group-id="4494512844-3">(</span><span class="p" data-group-id="4494512844-3">)</span><span class="w">
+</span><span class="n">with_content</span><span class="p" data-group-id="8994098806-1">(</span><span class="s">&quot;Hello there&quot;</span><span class="p" data-group-id="8994098806-1">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">with_flags</span><span class="p" data-group-id="8994098806-2">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="8994098806-2">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">channel_message</span><span class="p" data-group-id="8994098806-3">(</span><span class="p" data-group-id="8994098806-3">)</span><span class="w">
 
 </span><span class="c1"># Update a message</span><span class="w">
-</span><span class="n">with_content</span><span class="p" data-group-id="4494512844-4">(</span><span class="s">&quot;Current state: </span><span class="si" data-group-id="4494512844-5">#{</span><span class="n">state</span><span class="si" data-group-id="4494512844-5">}</span><span class="s">&quot;</span><span class="p" data-group-id="4494512844-4">)</span><span class="w">
-</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">update_message</span><span class="p" data-group-id="4494512844-6">(</span><span class="p" data-group-id="4494512844-6">)</span><span class="w">
+</span><span class="n">with_content</span><span class="p" data-group-id="8994098806-4">(</span><span class="s">&quot;Current state: </span><span class="si" data-group-id="8994098806-5">#{</span><span class="n">state</span><span class="si" data-group-id="8994098806-5">}</span><span class="s">&quot;</span><span class="p" data-group-id="8994098806-4">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">update_message</span><span class="p" data-group-id="8994098806-6">(</span><span class="p" data-group-id="8994098806-6">)</span><span class="w">
 
 </span><span class="c1"># Offer choices as response to an autocomplete interaction</span><span class="w">
-</span><span class="n">with_choices</span><span class="p" data-group-id="4494512844-7">(</span><span class="p" data-group-id="4494512844-8">[</span><span class="p" data-group-id="4494512844-9">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;One&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4494512844-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4494512844-10">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4494512844-10">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4494512844-11">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Four&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="4494512844-11">}</span><span class="p" data-group-id="4494512844-8">]</span><span class="p" data-group-id="4494512844-7">)</span><span class="w">
-</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">autocomplete_result</span><span class="p" data-group-id="4494512844-12">(</span><span class="p" data-group-id="4494512844-12">)</span><span class="w">
+</span><span class="n">with_choices</span><span class="p" data-group-id="8994098806-7">(</span><span class="p" data-group-id="8994098806-8">[</span><span class="p" data-group-id="8994098806-9">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;One&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8994098806-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8994098806-10">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="8994098806-10">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8994098806-11">%{</span><span class="ss">choice</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Four&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="8994098806-11">}</span><span class="p" data-group-id="8994098806-8">]</span><span class="p" data-group-id="8994098806-7">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">autocomplete_result</span><span class="p" data-group-id="8994098806-12">(</span><span class="p" data-group-id="8994098806-12">)</span><span class="w">
 
 </span><span class="c1"># Open a modal</span><span class="w">
 </span><span class="c1"># MODALS ARE NOT RELEASED / AVAILABLE YET.</span><span class="w">
-</span><span class="n">with_custom_id</span><span class="p" data-group-id="4494512844-13">(</span><span class="s">&quot;custom_id&quot;</span><span class="p" data-group-id="4494512844-13">)</span><span class="w">
-</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">with_components</span><span class="p" data-group-id="4494512844-14">(</span><span class="w">
-  </span><span class="nc">ActionRow</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4494512844-15">(</span><span class="w">
-    </span><span class="nc">InputText</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4494512844-16">(</span><span class="nc">InputText</span><span class="o">.</span><span class="n">text_style_short</span><span class="p" data-group-id="4494512844-17">(</span><span class="p" data-group-id="4494512844-17">)</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;input_text_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;What is your name?&quot;</span><span class="p" data-group-id="4494512844-16">)</span><span class="w">
-  </span><span class="p" data-group-id="4494512844-15">)</span><span class="w">
-</span><span class="p" data-group-id="4494512844-14">)</span><span class="w">
-</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">modal</span><span class="p" data-group-id="4494512844-18">(</span><span class="p" data-group-id="4494512844-18">)</span><span class="w">
+</span><span class="n">with_custom_id</span><span class="p" data-group-id="8994098806-13">(</span><span class="s">&quot;custom_id&quot;</span><span class="p" data-group-id="8994098806-13">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">with_components</span><span class="p" data-group-id="8994098806-14">(</span><span class="w">
+  </span><span class="nc">ActionRow</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8994098806-15">(</span><span class="w">
+    </span><span class="nc">InputText</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8994098806-16">(</span><span class="nc">InputText</span><span class="o">.</span><span class="n">text_style_short</span><span class="p" data-group-id="8994098806-17">(</span><span class="p" data-group-id="8994098806-17">)</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;input_text_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;What is your name?&quot;</span><span class="p" data-group-id="8994098806-16">)</span><span class="w">
+  </span><span class="p" data-group-id="8994098806-15">)</span><span class="w">
+</span><span class="p" data-group-id="8994098806-14">)</span><span class="w">
+</span><span class="o">|&gt;</span><span class="w"> </span><span class="n">modal</span><span class="p" data-group-id="8994098806-18">(</span><span class="p" data-group-id="8994098806-18">)</span><span class="w">
 </span></code></pre>  </section>
 
   <section id="summary" class="details-list">
@@ -144,9 +145,9 @@ crux_interaction      </a>
           <div class="summary-synopsis"><p>Used when responding to an interaction with a modal.</p></div>
       </div>
   </div>
-  <div class="summary-response-types summary">
+  <div class="summary-response-wrappers summary">
     <h2>
-      <a href="#response-types">Response Types</a>
+      <a href="#response-wrappers">Response Wrappers</a>
     </h2>
       <div class="summary-row">
         <div class="summary-signature">
@@ -164,13 +165,15 @@ crux_interaction      </a>
         <div class="summary-signature">
           <a href="#deferred_channel_message/0" translate="no">deferred_channel_message()</a>
         </div>
-          <div class="summary-synopsis"><p>Generates a response that acknowledges an interaction and displays a loading state to the user.<br/>A response must be sent later manually.</p></div>
+          <div class="summary-synopsis"><p>Generates a response that acknowledges an interaction and displays a loading state to the user.
+A response must be sent later manually.</p></div>
       </div>
       <div class="summary-row">
         <div class="summary-signature">
           <a href="#deferred_update_message/0" translate="no">deferred_update_message()</a>
         </div>
-          <div class="summary-synopsis"><p>Generates a response that acknowledges a component interaction and displays <em>no</em> loading state to the user.<br/>An update must be sent later manually.</p></div>
+          <div class="summary-synopsis"><p>Generates a response that acknowledges a component interaction and displays <em>no</em> loading state to the user.
+An update must be sent later manually.</p></div>
       </div>
       <div class="summary-row">
         <div class="summary-signature">
@@ -191,9 +194,9 @@ crux_interaction      </a>
           <div class="summary-synopsis"><p>Generates a response that updates the message the component was attached to.</p></div>
       </div>
   </div>
-  <div class="summary-autocomplete summary">
+  <div class="summary-autocomplete-data summary">
     <h2>
-      <a href="#autocomplete">Autocomplete</a>
+      <a href="#autocomplete-data">Autocomplete Data</a>
     </h2>
       <div class="summary-row">
         <div class="summary-signature">
@@ -202,9 +205,9 @@ crux_interaction      </a>
           <div class="summary-synopsis"><p>The choices to provide.</p></div>
       </div>
   </div>
-  <div class="summary-modal summary">
+  <div class="summary-modal-data summary">
     <h2>
-      <a href="#modal">Modal</a>
+      <a href="#modal-data">Modal Data</a>
     </h2>
       <div class="summary-row">
         <div class="summary-signature">
@@ -213,9 +216,9 @@ crux_interaction      </a>
           <div class="summary-synopsis"><p>The custom id to use.</p></div>
       </div>
   </div>
-  <div class="summary-message summary">
+  <div class="summary-message-data summary">
     <h2>
-      <a href="#message">Message</a>
+      <a href="#message-data">Message Data</a>
     </h2>
       <div class="summary-row">
         <div class="summary-signature">
@@ -227,7 +230,7 @@ crux_interaction      </a>
         <div class="summary-signature">
           <a href="#with_attachments/2" translate="no">with_attachments(data \\ %{}, attachments)</a>
         </div>
-          <div class="summary-synopsis"><p>The attachments to keep on the message.</p></div>
+          <div class="summary-synopsis"><p>What attachments to keep when editing a message.</p></div>
       </div>
       <div class="summary-row">
         <div class="summary-signature">
@@ -243,6 +246,12 @@ crux_interaction      </a>
       </div>
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#with_files/2" translate="no">with_files(data \\ %{}, files)</a>
+        </div>
+          <div class="summary-synopsis"><p>The files to use.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#with_flags/2" translate="no">with_flags(data \\ %{}, flags)</a>
         </div>
           <div class="summary-synopsis"><p>Message flags to use.</p></div>
@@ -254,15 +263,15 @@ crux_interaction      </a>
           <div class="summary-synopsis"><p>Whether the message content should use text-to-speech.</p></div>
       </div>
   </div>
-  <div class="summary-multiple summary">
+  <div class="summary-shared-data summary">
     <h2>
-      <a href="#multiple">Multiple</a>
+      <a href="#shared-data">Shared Data</a>
     </h2>
       <div class="summary-row">
         <div class="summary-signature">
           <a href="#with_components/2" translate="no">with_components(data \\ %{}, components)</a>
         </div>
-          <div class="summary-synopsis"><p>The components to use.</p></div>
+          <div class="summary-synopsis"><p>Components to use in a modal or message.</p></div>
       </div>
   </div>
   </section>
@@ -346,7 +355,8 @@ Types    </h1>
     users: [Crux.Structs.Snowflake.t()]
   },
   flags: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
-  components: [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()],
+  components: [<a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>() | Crux.Rest.component()],
+  files: [Crux.Rest.file_options()],
   attachments: [%{id: Crux.Structs.Snowflake.t()}]
 }</pre>
       </div>
@@ -360,7 +370,7 @@ Types    </h1>
       <span class="sr-only">Link to this type</span>
     </a>
     <h1 class="signature" translate="no">modal_data()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L205" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L206" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -372,7 +382,7 @@ Types    </h1>
       <div class="specs">
           <pre translate="no">modal_data() :: %{
   custom_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
-  components: [<a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()]
+  components: [<a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>() | Crux.Rest.component()]
 }</pre>
       </div>
 
@@ -380,14 +390,14 @@ Types    </h1>
 </section>
     </div>
   </section>
-  <section id="response-types" class="details-list">
+  <section id="response-wrappers" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#response-types">
+      <a class="hover-link" href="#response-wrappers">
         <span class="icon-link" aria-hidden="true"></span>
         <span class="sr-only">Link to this section</span>
       </a>
-Response Types    </h1>
-    <div class="response-types-list">
+Response Wrappers    </h1>
+    <div class="response-wrappers-list">
 <section class="detail" id="autocomplete_result/1">
   <div class="detail-header">
     <a href="#autocomplete_result/1" class="detail-link" title="Link to this function">
@@ -405,8 +415,7 @@ Response Types    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">autocomplete_result(<a href="#t:message_data/0">message_data</a>() | <a href="#t:modal_data/0">modal_data</a>()) ::
-  Crux.Rest.interaction_response()</pre>
+          <pre translate="no">autocomplete_result(<a href="#t:autocomplete_data/0">autocomplete_data</a>()) :: Crux.Rest.interaction_response()</pre>
       </div>
 
 <p>Generates a response that displays the user choices to chose from.</p><blockquote><p>Only valid as a response to auto complete interactions.</p></blockquote>  </section>
@@ -454,7 +463,8 @@ Response Types    </h1>
           <pre translate="no">deferred_channel_message() :: Crux.Rest.interaction_response()</pre>
       </div>
 
-<p>Generates a response that acknowledges an interaction and displays a loading state to the user.<br/>A response must be sent later manually.</p><blockquote><p>Not valid for autocomplete interactions.</p></blockquote>  </section>
+<p>Generates a response that acknowledges an interaction and displays a loading state to the user.
+A response must be sent later manually.</p><blockquote><p>Not valid for autocomplete interactions.</p></blockquote>  </section>
 </section>
 <section class="detail" id="deferred_update_message/0">
   <div class="detail-header">
@@ -476,7 +486,8 @@ Response Types    </h1>
           <pre translate="no">deferred_update_message() :: Crux.Rest.interaction_response()</pre>
       </div>
 
-<p>Generates a response that acknowledges a component interaction and displays <em>no</em> loading state to the user.<br/>An update must be sent later manually.</p><blockquote><p>Only valid as response to component interactions.</p></blockquote>  </section>
+<p>Generates a response that acknowledges a component interaction and displays <em>no</em> loading state to the user.
+An update must be sent later manually.</p><blockquote><p>Only valid as response to component interactions.</p></blockquote>  </section>
 </section>
 <section class="detail" id="modal/1">
   <div class="detail-header">
@@ -546,14 +557,14 @@ Response Types    </h1>
 </section>
     </div>
   </section>
-  <section id="autocomplete" class="details-list">
+  <section id="autocomplete-data" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#autocomplete">
+      <a class="hover-link" href="#autocomplete-data">
         <span class="icon-link" aria-hidden="true"></span>
         <span class="sr-only">Link to this section</span>
       </a>
-Autocomplete    </h1>
-    <div class="autocomplete-list">
+Autocomplete Data    </h1>
+    <div class="autocomplete-data-list">
 <section class="detail" id="with_choices/2">
     <span id="with_choices/1"></span>
   <div class="detail-header">
@@ -579,14 +590,14 @@ Autocomplete    </h1>
 </section>
     </div>
   </section>
-  <section id="modal" class="details-list">
+  <section id="modal-data" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#modal">
+      <a class="hover-link" href="#modal-data">
         <span class="icon-link" aria-hidden="true"></span>
         <span class="sr-only">Link to this section</span>
       </a>
-Modal    </h1>
-    <div class="modal-list">
+Modal Data    </h1>
+    <div class="modal-data-list">
 <section class="detail" id="with_custom_id/2">
     <span id="with_custom_id/1"></span>
   <div class="detail-header">
@@ -595,7 +606,7 @@ Modal    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_custom_id(data \\ %{}, custom_id)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L218" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L219" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -612,14 +623,14 @@ Modal    </h1>
 </section>
     </div>
   </section>
-  <section id="message" class="details-list">
+  <section id="message-data" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#message">
+      <a class="hover-link" href="#message-data">
         <span class="icon-link" aria-hidden="true"></span>
         <span class="sr-only">Link to this section</span>
       </a>
-Message    </h1>
-    <div class="message-list">
+Message Data    </h1>
+    <div class="message-data-list">
 <section class="detail" id="with_allowed_mentions/2">
     <span id="with_allowed_mentions/1"></span>
   <div class="detail-header">
@@ -628,7 +639,7 @@ Message    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_allowed_mentions(data \\ %{}, allowed_mentions)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L278" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L279" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -660,7 +671,7 @@ Message    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_attachments(data \\ %{}, attachments)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L308" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L322" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -676,7 +687,8 @@ Message    </h1>
 ) :: <a href="#t:message_data/0">message_data</a>()</pre>
       </div>
 
-<p>The attachments to keep on the message.</p><p>Not setting this means that all attachments will be kept.<br/>An empty list means that all attachments will be removed.</p><blockquote><p>Only relevant when updating a message.</p></blockquote>  </section>
+<p>What attachments to keep when editing a message.</p><p>Not setting / clearing this means that all attachments will be kept.
+An empty list means that all attachments will be removed.</p>  </section>
 </section>
 <section class="detail" id="with_content/2">
     <span id="with_content/1"></span>
@@ -686,7 +698,7 @@ Message    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_content(data \\ %{}, content)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L242" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L243" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -709,7 +721,7 @@ Message    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_embeds(data \\ %{}, embeds)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L255" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L256" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -727,6 +739,30 @@ Message    </h1>
 
 <p>The embeds to use, may be up to 10.</p>  </section>
 </section>
+<section class="detail" id="with_files/2">
+    <span id="with_files/1"></span>
+  <div class="detail-header">
+    <a href="#with_files/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">with_files(data \\ %{}, files)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L303" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">with_files(<a href="#t:message_data/0">message_data</a>(), files :: [Crux.Rest.file_options()] | nil) ::
+  <a href="#t:message_data/0">message_data</a>()</pre>
+      </div>
+
+<p>The files to use.</p>  </section>
+</section>
 <section class="detail" id="with_flags/2">
     <span id="with_flags/1"></span>
   <div class="detail-header">
@@ -735,7 +771,7 @@ Message    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_flags(data \\ %{}, flags)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L290" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L291" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -758,7 +794,7 @@ Message    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_tts(data \\ %{}, tts)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L230" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L231" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -775,14 +811,14 @@ Message    </h1>
 </section>
     </div>
   </section>
-  <section id="multiple" class="details-list">
+  <section id="shared-data" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#multiple">
+      <a class="hover-link" href="#shared-data">
         <span class="icon-link" aria-hidden="true"></span>
         <span class="sr-only">Link to this section</span>
       </a>
-Multiple    </h1>
-    <div class="multiple-list">
+Shared Data    </h1>
+    <div class="shared-data-list">
 <section class="detail" id="with_components/2">
     <span id="with_components/1"></span>
   <div class="detail-header">
@@ -791,7 +827,7 @@ Multiple    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">with_components(data \\ %{}, components)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L329" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/response.ex#L341" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -803,15 +839,15 @@ Multiple    </h1>
       <div class="specs">
           <pre translate="no">with_components(
   <a href="#t:message_data/0">message_data</a>(),
-  <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()
+  <a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>() | Crux.Rest.component()
 ) :: <a href="#t:message_data/0">message_data</a>()</pre>
           <pre translate="no">with_components(
   <a href="#t:modal_data/0">modal_data</a>(),
-  <a href="Crux.Interaction.MessageComponent.html#t:t/0">Crux.Interaction.MessageComponent.t</a>() | Crux.Rest.component()
+  <a href="Crux.Interaction.Component.html#t:t/0">Crux.Interaction.Component.t</a>() | Crux.Rest.component()
 ) :: <a href="#t:modal_data/0">modal_data</a>()</pre>
       </div>
 
-<p>The components to use.</p><p>Available in modals and messages.</p>  </section>
+<p>Components to use in a modal or message.</p>  </section>
 </section>
     </div>
   </section>

@@ -8,7 +8,7 @@
     <meta name="project" content="crux_interaction v0.1.0-dev">
     <title>API Reference — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -95,31 +95,41 @@ API Reference <small class="app-vsn">crux_interaction v0.1.0-dev</small></h1>
   <div class="summary-signature">
     <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidChoice.html" translate="no">Crux.Interaction.ApplicationCommand.Exceptions.InvalidChoice</a>
   </div>
-    <div class="summary-synopsis"><p>Raised when an invalid application command chat input choice name or description was specified.<br/>Also raised when too many or duplicated choices were specified.<br/>See <code class="inline">valid_name?/1</code> and <code class="inline">valid_choice?/2</code></p></div>
+    <div class="summary-synopsis"><p>Raised when an invalid application command chat input choice name or description was specified.
+Also raised when too many or duplicated choices were specified.
+See <code class="inline">valid_name?/1</code> and <code class="inline">valid_choice?/2</code></p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidDefaultPermission.html" translate="no">Crux.Interaction.ApplicationCommand.Exceptions.InvalidDefaultPermission</a>
   </div>
-    <div class="summary-synopsis"><p>Raised when an invalid <code class="inline">@default_permission</code> was specified for an application command chat input.<br/>I.e. not a boolean.<br/>See: <a href="#valid?/1"><code class="inline">valid?/1</code></a></p></div>
+    <div class="summary-synopsis"><p>Raised when an invalid <code class="inline">@default_permission</code> was specified for an application command chat input.
+I.e. not a boolean.
+See: <a href="#valid?/1"><code class="inline">valid?/1</code></a></p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidDescription.html" translate="no">Crux.Interaction.ApplicationCommand.Exceptions.InvalidDescription</a>
   </div>
-    <div class="summary-synopsis"><p>Raised when an invalid description was specified anywhere.<br/>See: <a href="#valid?/1"><code class="inline">valid?/1</code></a></p></div>
+    <div class="summary-synopsis"><p>Raised when an invalid description was specified anywhere.
+See: <a href="#valid?/1"><code class="inline">valid?/1</code></a></p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidName.html" translate="no">Crux.Interaction.ApplicationCommand.Exceptions.InvalidName</a>
   </div>
-    <div class="summary-synopsis"><p>Raised when an invalid name was specified anywhere.<br/>See: <code class="inline">valid?/1</code></p></div>
+    <div class="summary-synopsis"><p>Raised when an invalid name was specified anywhere.
+See: <code class="inline">valid?/1</code></p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="Crux.Interaction.ApplicationCommand.Exceptions.InvalidState.html" translate="no">Crux.Interaction.ApplicationCommand.Exceptions.InvalidState</a>
   </div>
-    <div class="summary-synopsis"><p>Raised when an option is specified where it's not valid.<br/>E.g. when a <code class="inline">subcommand/4</code> is specified after a <code class="inline">string/2,3</code> or a <code class="inline">choice/2</code> in a <code class="inline">subcommand/4</code>'s do block.<br/>Also raised when an invalid option modifier was specified.<br/>E.g. when <code class="inline">@required</code> is used where it's not allowed.<br/>Also raised when too many or duplicated options were specified.</p></div>
+    <div class="summary-synopsis"><p>Raised when an option is specified where it's not valid.
+E.g. when a <code class="inline">subcommand/4</code> is specified after a <code class="inline">string/2,3</code> or a <code class="inline">choice/2</code> in a <code class="inline">subcommand/4</code>'s do block.
+Also raised when an invalid option modifier was specified.
+E.g. when <code class="inline">@required</code> is used where it's not allowed.
+Also raised when too many or duplicated options were specified.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -135,39 +145,64 @@ API Reference <small class="app-vsn">crux_interaction v0.1.0-dev</small></h1>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Crux.Interaction.MessageComponent.html" translate="no">Crux.Interaction.MessageComponent</a>
+    <a href="Crux.Interaction.Component.html" translate="no">Crux.Interaction.Component</a>
   </div>
-    <div class="summary-synopsis"><p>Message components are interactive elements that may be added to messages or be sent as part of a response to an interaction.</p></div>
+    <div class="summary-synopsis"><p>Components are interactive elements that may be added to messages or be sent as part of a response to an interaction.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Crux.Interaction.MessageComponent.ActionRow.html" translate="no">Crux.Interaction.MessageComponent.ActionRow</a>
+    <a href="Crux.Interaction.Component.ActionRow.html" translate="no">Crux.Interaction.Component.ActionRow</a>
   </div>
     <div class="summary-synopsis"><p>An action row is a non-interactive container component for other types of components.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Crux.Interaction.MessageComponent.Button.html" translate="no">Crux.Interaction.MessageComponent.Button</a>
+    <a href="Crux.Interaction.Component.Button.html" translate="no">Crux.Interaction.Component.Button</a>
   </div>
     <div class="summary-synopsis"><p>Buttons are interactive components.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Crux.Interaction.MessageComponent.InputText.html" translate="no">Crux.Interaction.MessageComponent.InputText</a>
+    <a href="Crux.Interaction.Component.InputText.html" translate="no">Crux.Interaction.Component.InputText</a>
   </div>
     <div class="summary-synopsis"><h1>THIS IS NOT RELEASED / AVAILABLE YET.</h1><h1>EVERYTHING IS SUBJECT TO CHANGE.</h1><p>For input text the following limitations apply</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Crux.Interaction.MessageComponent.SelectMenu.html" translate="no">Crux.Interaction.MessageComponent.SelectMenu</a>
+    <a href="Crux.Interaction.Component.SelectMenu.html" translate="no">Crux.Interaction.Component.SelectMenu</a>
   </div>
     <div class="summary-synopsis"><p>Select menus are another interactive component that renders on messages.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html" translate="no">Crux.Interaction.MessageComponent.SelectMenu.Option</a>
+    <a href="Crux.Interaction.Component.SelectMenu.Option.html" translate="no">Crux.Interaction.Component.SelectMenu.Option</a>
   </div>
     <div class="summary-synopsis"><p>An option used in a select menu.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.Executor.html" translate="no">Crux.Interaction.Executor</a>
+  </div>
+    <div class="summary-synopsis"><p>Behavior to provide commands and module to handle incoming interaction payloads to respond accordingly.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.Plug.html" translate="no">Crux.Interaction.Plug</a>
+  </div>
+    <div class="summary-synopsis"><p>  Wrapper plug around <a href="Crux.Interaction.Executor.html"><code class="inline">Crux.Interaction.Executor</code></a>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.Plug.CacheBodyReader.html" translate="no">Crux.Interaction.Plug.CacheBodyReader</a>
+  </div>
+    <div class="summary-synopsis"><p>To be plugged into <a href="https://hexdocs.pm/plug/1.12.1/Plug.Parsers.html"><code class="inline">Plug.Parsers</code></a> as a <code class="inline">body_reader</code>.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Crux.Interaction.Plug.VerifyHeader.html" translate="no">Crux.Interaction.Plug.VerifyHeader</a>
+  </div>
+    <div class="summary-synopsis"><p>Verifies the <code class="inline">x-signature-ed25519</code> and <code class="inline">x-signature-timestamp</code> headers Discord sends
+along every payload to ensure that only requests that are coming from Discord are processed.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
-    <title>Crux.Interaction.MessageComponent.SelectMenu — crux_interaction v0.1.0-dev</title>
+    <title>Crux.Interaction.Component.SelectMenu — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -69,9 +69,9 @@ crux_interaction      </a>
     <div id="content" class="content-inner">
 
 <h1>
-  <span translate="no">Crux.Interaction.MessageComponent.SelectMenu</span> 
+  <span translate="no">Crux.Interaction.Component.SelectMenu</span> 
   <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
-    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L1" title="View Source" class="view-source" rel="help">
       <span class="icon-code" aria-hidden="true"></span>
       <span class="sr-only">View Source</span>
     </a>
@@ -157,7 +157,7 @@ Types    </h1>
       <span class="sr-only">Link to this type</span>
     </a>
     <h1 class="signature" translate="no">t()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L29" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L29" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -166,12 +166,12 @@ Types    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">t() :: %Crux.Interaction.MessageComponent.SelectMenu{
+          <pre translate="no">t() :: %Crux.Interaction.Component.SelectMenu{
   custom_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
   disabled: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>() | nil,
   max_values: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>() | nil,
   min_values: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
-  options: <a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>(),
+  options: <a href="Crux.Interaction.Component.SelectMenu.Option.html#t:t/0">Crux.Interaction.Component.SelectMenu.Option.t</a>(),
   placeholder: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
   type: 3
 }</pre>
@@ -196,7 +196,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">add_options(select_menu, option)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L72" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L72" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -206,9 +206,8 @@ Functions    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">add_options(<a href="#t:t/0">t</a>(), <a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
-          <pre translate="no">add_options(<a href="#t:t/0">t</a>(), [<a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()]) ::
-  <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">add_options(<a href="#t:t/0">t</a>(), <a href="Crux.Interaction.Component.SelectMenu.Option.html#t:t/0">Crux.Interaction.Component.SelectMenu.Option.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+          <pre translate="no">add_options(<a href="#t:t/0">t</a>(), [<a href="Crux.Interaction.Component.SelectMenu.Option.html#t:t/0">Crux.Interaction.Component.SelectMenu.Option.t</a>()]) :: <a href="#t:t/0">t</a>()</pre>
       </div>
 
 <p>Add one or multiple options to the select menu.</p>  </section>
@@ -221,7 +220,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">new(custom_id, option_s \\ [])</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L46" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L46" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -234,8 +233,8 @@ Functions    </h1>
           <pre translate="no">new(
   custom_id :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
   option_s ::
-    <a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()
-    | [<a href="Crux.Interaction.MessageComponent.SelectMenu.Option.html#t:t/0">Crux.Interaction.MessageComponent.SelectMenu.Option.t</a>()]
+    <a href="Crux.Interaction.Component.SelectMenu.Option.html#t:t/0">Crux.Interaction.Component.SelectMenu.Option.t</a>()
+    | [<a href="Crux.Interaction.Component.SelectMenu.Option.html#t:t/0">Crux.Interaction.Component.SelectMenu.Option.t</a>()]
 ) :: <a href="#t:t/0">t</a>()</pre>
       </div>
 
@@ -248,7 +247,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">put_disabled(select_menu, disabled)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L127" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L127" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -270,7 +269,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">put_max_values(select_menu, max_values)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L117" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L117" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -292,7 +291,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">put_min_values(select_menu, min_values)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L107" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L107" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -314,7 +313,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">put_placeholder(select_menu, placeholder)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/select_menu.ex#L93" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/select_menu.ex#L93" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -338,7 +337,7 @@ Functions    </h1>
           <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
           <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
 
-            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component/select_menu.ex">(current file)</a>
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/component/select_menu.ex">(current file)</a>
         </p>
         <p>
           <span class="line">

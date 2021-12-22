@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.26.0">
     <meta name="project" content="crux_interaction v0.1.0-dev">
-    <title>Crux.Interaction.MessageComponent.InputText — crux_interaction v0.1.0-dev</title>
+    <title>Crux.Interaction.Component.InputText — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -69,9 +69,9 @@ crux_interaction      </a>
     <div id="content" class="content-inner">
 
 <h1>
-  <span translate="no">Crux.Interaction.MessageComponent.InputText</span> 
+  <span translate="no">Crux.Interaction.Component.InputText</span> 
   <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
-    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L1" title="View Source" class="view-source" rel="help">
       <span class="icon-code" aria-hidden="true"></span>
       <span class="sr-only">View Source</span>
     </a>
@@ -135,6 +135,18 @@ crux_interaction      </a>
       </div>
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#put_required/2" translate="no">put_required(input_text, required)</a>
+        </div>
+          <div class="summary-synopsis"><p>Set whether the field may be submitted empty.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#put_value/2" translate="no">put_value(input_text, value)</a>
+        </div>
+          <div class="summary-synopsis"><p>Specify a value to be already prefilled into the field.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#text_style_paragraph/0" translate="no">text_style_paragraph()</a>
         </div>
           <div class="summary-synopsis"><p>The paragraph text syle, a multi line text box.</p></div>
@@ -163,7 +175,7 @@ Types    </h1>
       <span class="sr-only">Link to this type</span>
     </a>
     <h1 class="signature" translate="no">t()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L49" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L51" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -173,14 +185,16 @@ Types    </h1>
   <section class="docstring">
       <h2>Specs</h2>
       <div class="specs">
-          <pre translate="no">t() :: %Crux.Interaction.MessageComponent.InputText{
+          <pre translate="no">t() :: %Crux.Interaction.Component.InputText{
   custom_id: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
   label: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
   max_length: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>() | nil,
   min_length: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>() | nil,
   placeholder: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil,
+  required: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   style: <a href="#t:text_style/0">text_style</a>(),
-  type: 4
+  type: 4,
+  value: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
 }</pre>
       </div>
 
@@ -193,7 +207,7 @@ Types    </h1>
       <span class="sr-only">Link to this type</span>
     </a>
     <h1 class="signature" translate="no">text_style()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L34" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L36" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -225,7 +239,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">new(text_style, custom_id, label)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L64" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L66" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -247,7 +261,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">put_max_length(input_text, max_length)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L94" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L96" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -269,7 +283,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">put_min_length(input_text, min_length)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L84" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L86" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -291,7 +305,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">put_placeholder(input_text, placeholder)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L74" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L76" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -306,6 +320,50 @@ Functions    </h1>
 
 <p>Set the placeholder text to show if no text was provided (yet).</p>  </section>
 </section>
+<section class="detail" id="put_required/2">
+  <div class="detail-header">
+    <a href="#put_required/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_required(input_text, required)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_required(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Set whether the field may be submitted empty.</p>  </section>
+</section>
+<section class="detail" id="put_value/2">
+  <div class="detail-header">
+    <a href="#put_value/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">put_value(input_text, value)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">put_value(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:t/0">t</a>()</pre>
+      </div>
+
+<p>Specify a value to be already prefilled into the field.</p>  </section>
+</section>
 <section class="detail" id="text_style_paragraph/0">
   <div class="detail-header">
     <a href="#text_style_paragraph/0" class="detail-link" title="Link to this function">
@@ -313,7 +371,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">text_style_paragraph()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L46" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L48" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -331,7 +389,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">text_style_short()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/message_component/input_text.ex#L40" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/component/input_text.ex#L42" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -351,7 +409,7 @@ Functions    </h1>
           <a href="https://hex.pm/packages/crux_interaction/0.1.0-dev" class="line footer-hex-package">Package</a>
           <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev" class="line">Preview</a>
 
-            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/message_component/input_text.ex">(current file)</a>
+            <a href="https://preview.hex.pm/preview/crux_interaction/0.1.0-dev/show/lib/interaction/component/input_text.ex">(current file)</a>
         </p>
         <p>
           <span class="line">

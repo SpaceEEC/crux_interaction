@@ -8,7 +8,7 @@
     <meta name="project" content="crux_interaction v0.1.0-dev">
     <title>Crux.Interaction.ApplicationCommand — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -89,6 +89,17 @@ crux_interaction      </a>
       </a>
       Summary
     </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+        </div>
+          <div class="summary-synopsis"><p>All modules that <code class="inline">use</code> one of the in the moduledoc mentioned modules.</p></div>
+      </div>
+  </div>
   <div class="summary-callbacks summary">
     <h2>
       <a href="#callbacks">Callbacks</a>
@@ -99,9 +110,53 @@ crux_interaction      </a>
         </div>
           <div class="summary-synopsis"><p>A term representing the defined command, that when JSON encoded, is compatible with what the Discord API expects.</p></div>
       </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:handle/2" translate="no">handle(interaction, context)</a>
+        </div>
+          <div class="summary-synopsis"><p>Handle and respond to interactions.</p></div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:handle_autocomplete/2" translate="no">handle_autocomplete(interaction, context)</a>
+        </div>
+          <div class="summary-synopsis"><p>Handle autocomplete interactions.</p></div>
+      </div>
   </div>
   </section>
 
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <span class="icon-link" aria-hidden="true"></span>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command.ex#L16" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">t() :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">module</a>()</pre>
+      </div>
+
+<p>All modules that <code class="inline">use</code> one of the in the moduledoc mentioned modules.</p>  </section>
+</section>
+    </div>
+  </section>
   <section id="callbacks" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#callbacks">
@@ -117,7 +172,7 @@ Callbacks    </h1>
       <span class="sr-only">Link to this callback</span>
     </a>
     <h1 class="signature" translate="no">__crux_command__()</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command.ex#L18" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command.ex#L44" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -131,6 +186,58 @@ Callbacks    </h1>
       </div>
 
 <p>A term representing the defined command, that when JSON encoded, is compatible with what the Discord API expects.</p><blockquote><p>See the <code class="inline">Application Commands</code> section of <code class="inline">Crux.Rest</code> for usages.</p></blockquote>  </section>
+</section>
+<section class="detail" id="c:handle/2">
+  <div class="detail-header">
+    <a href="#c:handle/2" class="detail-link" title="Link to this callback">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle(interaction, context)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(optional)</span>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">handle(
+  interaction :: Crux.Interaction.interaction(),
+  context :: <a href="Crux.Interaction.Executor.html#t:context/0">Crux.Interaction.Executor.context</a>()
+) :: <a href="Crux.Interaction.Executor.html#t:handle_return/0">Crux.Interaction.Executor.handle_return</a>()</pre>
+      </div>
+
+<p>Handle and respond to interactions.</p>  </section>
+</section>
+<section class="detail" id="c:handle_autocomplete/2">
+  <div class="detail-header">
+    <a href="#c:handle_autocomplete/2" class="detail-link" title="Link to this callback">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_autocomplete(interaction, context)</h1>
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command.ex#L36" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+      <span class="note">(optional)</span>
+      <span class="note">(since 0.1.0)</span>
+  </div>
+
+  <section class="docstring">
+      <h2>Specs</h2>
+      <div class="specs">
+          <pre translate="no">handle_autocomplete(
+  interaction :: Crux.Interaction.interaction(),
+  context :: <a href="Crux.Interaction.Executor.html#t:context/0">Crux.Interaction.Executor.context</a>()
+) :: <a href="Crux.Interaction.Executor.html#t:handle_return/0">Crux.Interaction.Executor.handle_return</a>()</pre>
+      </div>
+
+<p>Handle autocomplete interactions.</p><p>Only applicable if the defined interaction supports and registers such.</p>  </section>
 </section>
     </div>
   </section>

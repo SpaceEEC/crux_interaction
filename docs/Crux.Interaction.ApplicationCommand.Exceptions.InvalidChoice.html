@@ -8,7 +8,7 @@
     <meta name="project" content="crux_interaction v0.1.0-dev">
     <title>Crux.Interaction.ApplicationCommand.Exceptions.InvalidChoice — crux_interaction v0.1.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-4a33a99d0bf2560a814f.css" />
-    <script src="dist/sidebar_items-1063aba2b6.js"></script>
+    <script src="dist/sidebar_items-5db30cbfb6.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/app-845bc49c8159f61ff61d.js"></script>
   </head>
@@ -71,7 +71,7 @@ crux_interaction      </a>
 <h1>
   <span translate="no">Crux.Interaction.ApplicationCommand.Exceptions.InvalidChoice</span> <small>exception</small>
   <small class="app-vsn" translate="no">(crux_interaction v0.1.0-dev)</small>
-    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/exceptions.ex#L175" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/exceptions.ex#L183" title="View Source" class="view-source" rel="help">
       <span class="icon-code" aria-hidden="true"></span>
       <span class="sr-only">View Source</span>
     </a>
@@ -79,7 +79,9 @@ crux_interaction      </a>
 
 
   <section id="moduledoc">
-<p>Raised when an invalid application command chat input choice name or description was specified.<br/>Also raised when too many or duplicated choices were specified.<br/>See <code class="inline">valid_name?/1</code> and <code class="inline">valid_choice?/2</code></p>  </section>
+<p>Raised when an invalid application command chat input choice name or description was specified.
+Also raised when too many or duplicated choices were specified.
+See <code class="inline">valid_name?/1</code> and <code class="inline">valid_choice?/2</code></p>  </section>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
@@ -97,7 +99,8 @@ crux_interaction      </a>
         <div class="summary-signature">
           <a href="#valid_value?/2" translate="no">valid_value?(type, value)</a>
         </div>
-          <div class="summary-synopsis"><p>Whether the given value is valid for a chat input choice value.<br/>Choice value validity depend on their enclosing option</p></div>
+          <div class="summary-synopsis"><p>Whether the given value is valid for a chat input choice value.
+Choice value validity depend on their enclosing option</p></div>
       </div>
   </div>
   </section>
@@ -117,7 +120,7 @@ Functions    </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">valid_value?(type, value)</h1>
-      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/exceptions.ex#L226" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/SpaceEEC/crux_interaction/blob/trunk/lib/interaction/application_command/exceptions.ex#L234" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -130,7 +133,8 @@ Functions    </h1>
           <pre translate="no">valid_value?(type :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>(), value :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
       </div>
 
-<p>Whether the given value is valid for a chat input choice value.<br/>Choice value validity depend on their enclosing option:</p><ul><li><code class="inline">string/3</code> -&gt; must be a [1,100] characters long string</li><li><code class="inline">integer/3</code> -&gt; must be an integer in [-2^53,+2^53]</li><li><code class="inline">number/3</code> -&gt; must be a double in [-2^53,+2^53]</li></ul>  </section>
+<p>Whether the given value is valid for a chat input choice value.
+Choice value validity depend on their enclosing option:</p><ul><li><code class="inline">string/3</code> -&gt; must be a [1,100] characters long string</li><li><code class="inline">integer/3</code> -&gt; must be an integer in [-2^53,+2^53]</li><li><code class="inline">number/3</code> -&gt; must be a double in [-2^53,+2^53]</li></ul>  </section>
 </section>
     </div>
   </section>
