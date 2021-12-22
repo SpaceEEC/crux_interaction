@@ -17,8 +17,8 @@ jobs:
         with:
           path: repo
 
-      # - name: Install sodium
-      #   run: sudo apt-get update && sudo apt-get install libsodium23 libsodium-dev -y
+      - name: Install sodium
+        run: sudo apt-get update && sudo apt-get install libsodium23 libsodium-dev -y
 
       - uses: erlef/setup-beam@v1
         with:

@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # - name: Install sodium
-      #   run: sudo apt-get update && sudo apt-get install libsodium23 libsodium-dev -y
+      - name: Install sodium
+        run: sudo apt-get update && sudo apt-get install libsodium23 libsodium-dev -y
 
       - uses: erlef/setup-beam@v1
         with:
@@ -37,8 +37,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # - name: Install sodium
-      #   run: sudo apt-get update && sudo apt-get install libsodium23 libsodium-dev -y
+      - name: Install sodium
+        run: sudo apt-get update && sudo apt-get install libsodium23 libsodium-dev -y
 
       - uses: erlef/setup-beam@v1
         with:
